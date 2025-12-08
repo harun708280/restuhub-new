@@ -1,0 +1,151 @@
+"use client";
+
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useRef, useState, useEffect } from "react";
+import type { Swiper as SwiperType } from "swiper";
+import "swiper/css";
+
+const Saying = () => {
+  const [isPrevDisabled, setIsPrevDisabled] = useState(true);
+  const [isNextDisabled, setIsNextDisabled] = useState(false);
+const swiperRef = useRef<SwiperType | null>(null);
+
+  const testimonials = [
+    {
+      name: "Korin Green",
+      position: "Director, ECDI Women’s Business Center",
+      text: "From the very first planning call with IBAI, we knew they understood our mission. They tailored their workshop to our members, mixing clarity with enthusiasm. It was energizing, accessible for beginners and thought‑provoking for seasoned entrepreneurs..",
+    },
+    {
+      name: "Sarah Johnson",
+      position: "CEO, TechStart Inc.",
+      text: "From the very first planning call with IBAI, we knew they understood our mission. They tailored their workshop to our members, mixing clarity with enthusiasm. It was energizing, accessible for beginners and thought‑provoking for seasoned entrepreneurs.",
+    },
+    {
+      name: "Md. Rahman",
+      position: "Founder, StartupBD",
+      text: "From the very first planning call with IBAI, we knew they understood our mission. They tailored their workshop to our members, mixing clarity with enthusiasm. It was energizing, accessible for beginners and thought‑provoking for seasoned entrepreneurs.",
+    },
+  ];
+
+  return (
+    <div className="pt-20 lg:pt-32">
+      <div
+        className="  bg-no-repeat bg-top rounded-3xl -mx-4 md:mx-0 overflow-hidden "
+        style={{ backgroundImage: "url('/images/saying-bg.png')" }}
+      >
+        <div className="container ">
+
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pt-10">
+            <h2 className="title text-center md:text-left max-w-2xl">
+              What Our Partners Are Saying
+            </h2>
+
+  
+            <div className="flex gap-3 order-first md:order-last">
+              <button
+                className={`swiper-prev-button group h-12 w-12 md:h-12 md:w-13 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 ${
+                  isPrevDisabled
+                    ? "bg-white text-black border border-gray-300"
+                    : "bg-secondary text-white hover:bg-secondary/90"
+                }`}
+              >
+                <ArrowLeft
+                  className={`w-6 h-6 transition-transform duration-300 ${
+                    !isPrevDisabled && "group-hover:-translate-x-1"
+                  }`}
+                />
+              </button>
+
+              <button
+                className={`swiper-next-button group h-12 w-12 md:h-12 md:w-13 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 ${
+                  isNextDisabled
+                    ? "bg-white text-black border border-gray-300"
+                    : "bg-secondary text-white hover:bg-secondary/90"
+                }`}
+              >
+                <ArrowRight
+                  className={`w-6 h-6 transition-transform duration-300 ${
+                    !isNextDisabled && "group-hover:translate-x-1"
+                  }`}
+                />
+              </button>
+            </div>
+          </div>
+
+          <div className="pt-60 -mx-4 md:mx-0 overflow-hidden">
+            <Swiper
+              modules={[Autoplay, Navigation]}
+              spaceBetween={30}
+              slidesPerView={1}
+              breakpoints={{
+                768: { slidesPerView: 2 },
+              }}
+              loop={true}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              navigation={{
+                prevEl: ".swiper-prev-button",
+                nextEl: ".swiper-next-button",
+              }}
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper;
+                // Initial state
+                setIsPrevDisabled(swiper.isBeginning);
+                setIsNextDisabled(swiper.isEnd);
+              }}
+              onSlideChange={(swiper) => {
+                setIsPrevDisabled(swiper.isBeginning);
+                setIsNextDisabled(swiper.isEnd);
+              }}
+              className="pb-8"
+            >
+              {testimonials.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div className="px-4 md:px-0">
+                    <div className="border border-black/10 bg-white/95 backdrop-blur-sm  rounded-2xl p-6 lg:p-8 h-full flex flex-col hover:shadow-2xl transition-shadow duration-300">
+                      <Image
+                        src="/images/5star.png"
+                        alt="5 stars"
+                        width={136}
+                        height={24}
+                        className="mb-5"
+                      />
+                      <p className="text-gray-700 text-base lg:text-lg leading-relaxed flex-grow">
+                        {item.text}
+                      </p>
+                      <div className="flex items-center gap-4 mt-8">
+                        <Image
+                          src="/images/author.png"
+                          alt={item.name}
+                          width={60}
+                          height={60}
+                          className="rounded-full ring-4 ring-white shadow-lg"
+                        />
+                        <div>
+                          <p className="text-lg font-bold text-gray-900">
+                            {item.name}
+                          </p>
+                          <p className="text-sm text-gray-600">
+                            {item.position}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Saying;
