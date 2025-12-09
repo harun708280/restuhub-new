@@ -7,11 +7,12 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 import type { Swiper as SwiperType } from "swiper";
 import "swiper/css";
+import { FadeInWhenVisible } from "../shared/FadeInWhenVisible";
 
 const Saying = () => {
   const [isPrevDisabled, setIsPrevDisabled] = useState(true);
   const [isNextDisabled, setIsNextDisabled] = useState(false);
-const swiperRef = useRef<SwiperType | null>(null);
+  const swiperRef = useRef<SwiperType | null>(null);
 
   const testimonials = [
     {
@@ -38,45 +39,46 @@ const swiperRef = useRef<SwiperType | null>(null);
         style={{ backgroundImage: "url('/images/saying-bg.png')" }}
       >
         <div className="container">
+          <FadeInWhenVisible>
+            <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-6 pt-10">
+              <h2 className="title text-center md:text-left max-w-2xl">
+                What Our Partners Are Saying
+              </h2>
 
-          <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-6 pt-10">
-            <h2 className="title text-center md:text-left max-w-2xl">
-              What Our Partners Are Saying
-            </h2>
-
-  
-            <div className="flex gap-3 order-first md:order-last">
-              <button
-                className={`swiper-prev-button group h-12 w-12 md:h-12 md:w-13 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 ${
-                  isPrevDisabled
-                    ? "bg-white text-black border border-gray-300"
-                    : "bg-secondary text-white hover:bg-secondary/90"
-                }`}
-              >
-                <ArrowLeft
-                  className={`w-6 h-6 transition-transform duration-300 ${
-                    !isPrevDisabled && "group-hover:-translate-x-1"
+              <div className="flex gap-3 order-first md:order-last">
+                <button
+                  className={`swiper-prev-button group h-12 w-12 md:h-12 md:w-13 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 ${
+                    isPrevDisabled
+                      ? "bg-white text-black border border-gray-300"
+                      : "bg-secondary text-white hover:bg-secondary/90"
                   }`}
-                />
-              </button>
+                >
+                  <ArrowLeft
+                    className={`w-6 h-6 transition-transform duration-300 ${
+                      !isPrevDisabled && "group-hover:-translate-x-1"
+                    }`}
+                  />
+                </button>
 
-              <button
-                className={`swiper-next-button group h-12 w-12 md:h-12 md:w-13 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 ${
-                  isNextDisabled
-                    ? "bg-white text-black border border-gray-300"
-                    : "bg-secondary text-white hover:bg-secondary/90"
-                }`}
-              >
-                <ArrowRight
-                  className={`w-6 h-6 transition-transform duration-300 ${
-                    !isNextDisabled && "group-hover:translate-x-1"
+                <button
+                  className={`swiper-next-button group h-12 w-12 md:h-12 md:w-13 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 ${
+                    isNextDisabled
+                      ? "bg-white text-black border border-gray-300"
+                      : "bg-secondary text-white hover:bg-secondary/90"
                   }`}
-                />
-              </button>
+                >
+                  <ArrowRight
+                    className={`w-6 h-6 transition-transform duration-300 ${
+                      !isNextDisabled && "group-hover:translate-x-1"
+                    }`}
+                  />
+                </button>
+              </div>
             </div>
-          </div>
+          </FadeInWhenVisible>
 
           <div className="pt-60 -mx-4 md:mx-0 overflow-hidden">
+             <FadeInWhenVisible delay={0.3}>
             <Swiper
               modules={[Autoplay, Navigation]}
               spaceBetween={30}
@@ -95,7 +97,7 @@ const swiperRef = useRef<SwiperType | null>(null);
               }}
               onSwiper={(swiper) => {
                 swiperRef.current = swiper;
-       
+
                 setIsPrevDisabled(swiper.isBeginning);
                 setIsNextDisabled(swiper.isEnd);
               }}
@@ -106,16 +108,20 @@ const swiperRef = useRef<SwiperType | null>(null);
               className="pb-8"
             >
               {testimonials.map((item, index) => (
+
+
                 <SwiperSlide key={index}>
                   <div className="px-4 md:px-0">
-                    <div className="border group border-black/10 bg-white/95 backdrop-blur-sm  rounded-2xl p-6 lg:p-8 h-full flex flex-col  transition-shadow duration-300  overflow-hidden
+                    <div
+                      className="border group border-black/10 bg-white/95 backdrop-blur-sm  rounded-2xl p-6 lg:p-8 h-full flex flex-col  transition-shadow duration-300  overflow-hidden
              transition-all duration-700 ease-out
              hover:bg-white/90 hover:backdrop-blur-2xl
        
-             cursor-pointer shadow-[0px 4px 34px 0px #0000000A]">
-                     <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+             cursor-pointer shadow-[0px 4px 34px 0px #0000000A]"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                       <Image
-                        src="/images/5star.png"
+                        src="/images/5-star.png"
                         alt="5 stars"
                         width={136}
                         height={24}
@@ -146,6 +152,7 @@ const swiperRef = useRef<SwiperType | null>(null);
                 </SwiperSlide>
               ))}
             </Swiper>
+            </FadeInWhenVisible>
           </div>
         </div>
       </div>

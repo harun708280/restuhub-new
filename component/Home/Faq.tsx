@@ -1,6 +1,7 @@
 "use client";
 import { ArrowRight } from "lucide-react";
 import React, { useState, useRef, useEffect } from "react";
+import { FadeInWhenVisible } from "../shared/FadeInWhenVisible";
 
 interface FaqItem {
   question: string;
@@ -41,58 +42,59 @@ const Faq: React.FC = () => {
     <div className="pt-120">
       <div className="container bg-[#E0E0E030] rounded-xl">
         <div className="p-0 lg:p-14">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full p-4">
-            <h2 className="title max-w-[505px] text-2xl font-bold">
-              Your Questions, Answered
-            </h2>
-            <div className="w-full md:w-auto">
-              <button className="primary-btn flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3">
-                <span>Start Free Trial</span>
-                <ArrowRight className="w-5 h-5" />
-              </button>
+          <FadeInWhenVisible>
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full p-4">
+              <h2 className="title max-w-[505px] text-2xl font-bold">
+                Your Questions, Answered
+              </h2>
+              <div className="w-full md:w-auto">
+                <button className="primary-btn flex items-center justify-center gap-2 w-full md:w-auto px-6 py-3">
+                  <span>Start Free Trial</span>
+                  <ArrowRight className="w-5 h-5" />
+                </button>
+              </div>
             </div>
-          </div>
+          </FadeInWhenVisible>
 
           <div className="pt-[20px] lg:pt-[40px]">
             {faqData.map((item, index) => {
               const isOpen = openIndex === index;
               return (
-                <div
-                  key={index}
-                  className="my-4 p-4  md:p-6 rounded-xl cursor-pointer bg-white text-[#181818] transition-all duration-300"
-                >
-                  <div
-                    className="flex justify-between items-center"
-                    onClick={() => toggleFaq(index)}
-                  >
-                    <span className="text-lg md:text-2xl font-medium">
-                      {item.question}
-                    </span>
-                    <span
-                      className={`border h-7 w-7 rounded-full flex justify-center items-center p-4 transition-transform duration-300 ${
-                        isOpen
-                          ? "rotate-180 border-none bg-secondary text-white"
-                          : "rotate-0 border-secondary"
-                      }`}
+                <FadeInWhenVisible key={index} delay={index * 0.1}>
+                  <div className="my-4 p-4  md:p-6 rounded-xl cursor-pointer bg-white text-[#181818] transition-all duration-300">
+                    <div
+                      className="flex justify-between items-center"
+                      onClick={() => toggleFaq(index)}
                     >
-                      ↑
-                    </span>
-                  </div>
+                      <span className="text-lg md:text-2xl font-medium">
+                        {item.question}
+                      </span>
+                      <span
+                        className={`border h-7 w-7 rounded-full flex justify-center items-center p-4 transition-transform duration-300 ${
+                          isOpen
+                            ? "rotate-180 border-none bg-secondary text-white"
+                            : "rotate-0 border-secondary"
+                        }`}
+                      >
+                        ↑
+                      </span>
+                    </div>
 
-                  <div
-                    ref={(el: HTMLDivElement | null) => {
-                      contentRefs.current[index] = el;
-                    }}
-                    className="overflow-hidden transition-all duration-500 ease-in-out"
-                    style={{
-                      maxHeight: isOpen ? `${heights[index] || 0}px` : "0px",
-                    }}
-                  >
-                    <p className="text-sm md:text-[18px] text-[#181818CC] mt-3">
-                      {item.answer}
-                    </p>
+                    <div
+                      ref={(el: HTMLDivElement | null) => {
+                        contentRefs.current[index] = el;
+                      }}
+                      className="overflow-hidden transition-all duration-500 ease-in-out"
+                      style={{
+                        maxHeight: isOpen ? `${heights[index] || 0}px` : "0px",
+                      }}
+                    >
+                      <p className="text-sm md:text-[18px] text-[#181818CC] mt-3">
+                        {item.answer}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </FadeInWhenVisible>
               );
             })}
           </div>

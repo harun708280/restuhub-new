@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Check, MoveRight } from "lucide-react";
+import { FadeInWhenVisible } from "../shared/FadeInWhenVisible";
 
 interface Plan {
   name: string;
@@ -74,53 +75,56 @@ const Pricing = () => {
   return (
     <div className="pt-120">
       <div className="container">
-        <h2 className="title text-center">Simple, Transparent Pricing</h2>
-        <div className="pt-[30px]">
-          <div className="flex justify-center ">
-            <div className="relative h-[65px] w-[300px] inline-flex items-center bg-white rounded-xl p-1.2  border border-[#00B67A]">
-              <div
-                className={`
+        <FadeInWhenVisible>
+          <h2 className="title text-center">Simple, Transparent Pricing</h2>
+          <div className="pt-[30px]">
+            <div className="flex justify-center ">
+              <div className="relative h-[65px] w-[300px] inline-flex items-center bg-white rounded-xl p-1.2  border border-[#00B67A]">
+                <div
+                  className={`
         absolute top-2 left-2 h-[48px] w-[140px] rounded-xl 
         bg-gradient-to-r from-[#00B67A] to-[#006242] 
         shadow-md
         transition-all duration-500 ease-out
         ${billing === "yearly" ? "translate-x-full" : "translate-x-0"}
       `}
-              />
+                />
 
-              <button
-                onClick={() => setBilling("monthly")}
-                className="relative z-10 px-10 py-2 rounded-full font-bold text-lg transition-colors duration-300"
-              >
-                <span
-                  className={
-                    billing === "monthly" ? "text-white" : "text-[#545A64]"
-                  }
+                <button
+                  onClick={() => setBilling("monthly")}
+                  className="relative z-10 px-10 py-2 rounded-full font-bold text-lg transition-colors duration-300"
                 >
-                  Monthly
-                </span>
-              </button>
+                  <span
+                    className={
+                      billing === "monthly" ? "text-white" : "text-[#545A64]"
+                    }
+                  >
+                    Monthly
+                  </span>
+                </button>
 
-              <button
-                onClick={() => setBilling("yearly")}
-                className="relative z-10 px-10 py-2 rounded-full font-bold text-lg flex items-center gap-3 transition-colors duration-300"
-              >
-                <span
-                  className={
-                    billing === "yearly" ? "text-white" : "text-[#545A64]"
-                  }
+                <button
+                  onClick={() => setBilling("yearly")}
+                  className="relative z-10 px-10 py-2 rounded-full font-bold text-lg flex items-center gap-3 transition-colors duration-300"
                 >
-                  Yearly
-                </span>
-              </button>
+                  <span
+                    className={
+                      billing === "yearly" ? "text-white" : "text-[#545A64]"
+                    }
+                  >
+                    Yearly
+                  </span>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
+        </FadeInWhenVisible>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 o pt-60">
-          {plans.map((plan) => (
+          {plans.map((plan,index) => (
+             <FadeInWhenVisible key={index} delay={index * 0.1}>
             <div
-              key={plan.name}
+             
               className={`relative bg-white border-[#E8EDFA] border rounded-3xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 ${
                 plan.popular ? "" : ""
               }`}
@@ -203,6 +207,7 @@ const Pricing = () => {
                 </ul>
               </div>
             </div>
+            </FadeInWhenVisible>
           ))}
         </div>
       </div>

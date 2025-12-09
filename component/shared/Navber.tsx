@@ -77,8 +77,8 @@ const Navbar = () => {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <button className="secondary-btn px-6 py-2">Login</button>
-            <button className="primary-btn px-6 py-2">Contact Us</button>
+            <button className="secondary-btn ">Login</button>
+            <button className="primary-btn ">Contact Us</button>
           </div>
 
           <button className="md:hidden" onClick={() => setOpen(true)}>
