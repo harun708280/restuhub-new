@@ -23,15 +23,15 @@ const Hero = () => {
           </FadeInWhenVisible>
 
           <FadeInWhenVisible delay={0.2}>
-            <div className="text-center max-w-[727px] mx-auto ">
+            <div className="text-center max-w-[887px] mx-auto ">
               <h1 className=" font-bold text-[35px] md:text-[45px] lg:text-[60px] leading-tight lg:leading-[70px] pt-5 lg:pt-8 ">
-                Never Miss a Review,{" "}
-                <span className="text-secondary">Never Lose a Customer</span>
+                Get Review Replies Done 
+
+                <span className="text-secondary"> Automatically, No VA Needed</span>
               </h1>
               <p className="desc pt-3 lg:pt-5">
-                RestruHub uses AI to respond to restaurant reviews within hours
-                with clear, natural, and professional replies—so you can focus
-                on running your business.
+                Each review is a moment to show customers you care. RestorHub creates fast, natural replies that keep guests feeling heard. Boost your reputation, strengthen loyalty, and reclaim time to focus on delivering great food and service.
+
               </p>
 
               <div className="flex gap-4 justify-center items-center md:flex-row flex-col pt-6 lg:pt-10">

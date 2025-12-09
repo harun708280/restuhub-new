@@ -38,8 +38,7 @@ const BrandLogo = () => {
             >
               <motion.div
                 whileHover={{
-                  scale: 1.2,
-                  y: -10,
+                  
                   transition: { type: "spring", stiffness: 400, damping: 15 }
                 }}
                 className="relative"

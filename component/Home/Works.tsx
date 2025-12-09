@@ -6,26 +6,26 @@ const Works = () => {
   const data = [
     {
       icon: "/icon/home.svg",
-      title: "Connect Your Platforms",
-      des: "Advanced AI generates natural, contextual replies that sound authentically human.",
+      title: "Connect Your Reviews",
+      des: "Link your Google account so RestorHub can import all your customer reviews automatically.",
       iconColor: "bg-[#359ACD]",
     },
     {
       icon: "/icon/paper.svg",
-      title: "AI Analyzes Reviews",
-      des: "Respond to reviews within hours, not days. Keep your customers engaged and happy.",
+      title: "Import or Sync Reviews",
+      des: "RestorHub brings in your latest Google reviews and keeps them updated in real time.",
       iconColor: "bg-[#099250]",
     },
     {
       icon: "/icon/chat.svg",
-      title: "Generate Smart Replies",
-      des: "Every response maintains your brand voice—friendly, natural, and professional.",
+      title: "Generate Reply",
+      des: "Receive AI-crafted, professional responses within minutes, ready to publish or adjust to your preference.",
       iconColor: "bg-[#FFA448]",
     },
     {
       icon: "/icon/verify.svg",
-      title: "Review & Publish",
-      des: "Timely responses improve ratings and show customers you care about their feedback.",
+      title: "Customize & Publish",
+      des: "Fine-tune tone and wording, then publish your replies directly from RestorHub.",
       iconColor: "bg-[#7435CD]",
     },
   ];
@@ -34,7 +34,7 @@ const Works = () => {
       <div className="container">
         <FadeInWhenVisible>
           <div className="max-w-[709px] mx-auto space-y-3 text-center">
-            <h2 className="title max-w-[562px] mx-auto">How RestruHub Works</h2>
+            <h2 className="title max-w-[562px] mx-auto">Simple 4-Step Process</h2>
             <p className="desc">
               Four simple steps to transform your review management process
             </p>

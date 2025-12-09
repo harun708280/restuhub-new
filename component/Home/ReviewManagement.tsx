@@ -10,19 +10,19 @@ const ReviewManagement = () => {
       <div className="container">
         <FadeInWhenVisible>
           <div
-            className=" max-h-[452px] bg-cover bg-no-repeat bg-top rounded-3xl -mx-4 md:mx-0 overflow-hidden"
+            className=" max-h-[490px] bg-cover bg-no-repeat bg-top rounded-3xl -mx-4 md:mx-0 overflow-hidden"
             style={{
               backgroundImage: "url('/Images/ReviewManagement-bg.png')",
             }}
           >
             <div className="flex justify-between flex-col gap-4 md:gap-0 md:flex-row pl-4  pt-6  md:pl-16 ">
-              <div className="md:pt-[80px] pr-4 md:pr-0">
-                <h2 className="title text-white ">
-                  Ready to Transform Your Review Management?
+              <div className="md:pt-[80px]  pr-4 md:pr-0 md:w-[60%]">
+                <h2 className="text-3xl font-bold text-white ">
+                  Value Customer Opinions, Enhance Your Reputation, And Drive Measurable Sales Growth
+
                 </h2>
                 <p className="text-white! desc pt-5 pb-8">
-                  Start your 14-day free trial today. No credit card required.
-                  Cancel anytime.
+                 Join growing restaurants using RestorHub to boost ratings, strengthen customer trust, and save hours on review management. Start your free 7-day trial and turn feedback into real business results
                 </p>
 
                 <div className="flex gap-2 items-center flex-wrap">
