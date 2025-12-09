@@ -12,7 +12,7 @@ const ReviewManagement = () => {
           <div
             className=" max-h-[452px] bg-cover bg-no-repeat bg-top rounded-3xl -mx-4 md:mx-0 overflow-hidden"
             style={{
-              backgroundImage: "url('/images/ReviewManagement-bg.png')",
+              backgroundImage: "url('/Images/ReviewManagement-bg.png')",
             }}
           >
             <div className="flex justify-between flex-col gap-4 md:gap-0 md:flex-row pl-4  pt-6  md:pl-16 ">
