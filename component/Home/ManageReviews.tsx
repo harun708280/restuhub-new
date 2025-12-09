@@ -42,7 +42,7 @@ const ManageReviews = () => {
     },
   ];
   return (
-    <div className="pt-120">
+    <div className="">
       <div className="container">
         <FadeInWhenVisible>
           <div className="max-w-[709px] mx-auto space-y-4 text-center">

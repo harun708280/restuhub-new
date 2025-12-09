@@ -36,7 +36,7 @@ const Saying = () => {
     <div className="pt-7 lg:pt-28 overflow-hidden px-4 mf:px-0">
       <div
         className="  bg-no-repeat bg-top rounded-3xl -mx-4 md:mx-0 overflow-hidden "
-        style={{ backgroundImage: "url('/images/saying-bg.png')" }}
+        style={{ backgroundImage: "url('/Images/review-bg.png')" }}
       >
         <div className="container">
           <FadeInWhenVisible>
@@ -121,7 +121,7 @@ const Saying = () => {
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                       <Image
-                        src="/images/5-star.png"
+                        src="/Images/star-5.png"
                         alt="5 stars"
                         width={136}
                         height={24}
@@ -132,7 +132,7 @@ const Saying = () => {
                       </p>
                       <div className="flex items-center gap-4 mt-8">
                         <Image
-                          src="/images/author.png"
+                          src="/Images/client-img.png"
                           alt={item.name}
                           width={60}
                           height={60}

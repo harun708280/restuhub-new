@@ -37,7 +37,7 @@ const ReviewManagement = () => {
 
               <div className=" relative h-[250px] md:h-[545px] w-full ">
                 <Image
-                  src="/images/DashboardSingle.png"
+                  src="/Images/DashboardSingle.png"
                   alt="DashboardSingle.png"
                   fill
                 />

@@ -54,6 +54,8 @@ const Hero = () => {
       </div>
 
         <BrandLogo />
+
+        <div className="pt-120"></div>
    
     </div>
   );
