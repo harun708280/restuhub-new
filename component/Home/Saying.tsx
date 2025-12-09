@@ -47,28 +47,28 @@ const Saying = () => {
 
               <div className="flex gap-3 order-first md:order-last">
                 <button
-                  className={`swiper-prev-button group h-12 w-12 md:h-12 md:w-13 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 ${
+                  className={`swiper-prev-button cursor-pointer group h-12 w-12 md:h-12 md:w-13 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 ${
                     isPrevDisabled
                       ? "bg-white text-black border border-gray-300"
                       : "bg-secondary text-white hover:bg-secondary/90"
                   }`}
                 >
                   <ArrowLeft
-                    className={`w-6 h-6 transition-transform duration-300 ${
+                    className={`w-6 h-6 transition-transform duration-300 cursor-pointer ${
                       !isPrevDisabled && "group-hover:-translate-x-1"
                     }`}
                   />
                 </button>
 
                 <button
-                  className={`swiper-next-button group h-12 w-12 md:h-12 md:w-13 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 ${
+                  className={`swiper-next-button cursor-pointer group h-12 w-12 md:h-12 md:w-13 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-300 ${
                     isNextDisabled
                       ? "bg-white text-black border border-gray-300"
                       : "bg-secondary text-white hover:bg-secondary/90"
                   }`}
                 >
                   <ArrowRight
-                    className={`w-6 h-6 transition-transform duration-300 ${
+                    className={`w-6 h-6 transition-transform cursor-pointer duration-300 ${
                       !isNextDisabled && "group-hover:translate-x-1"
                     }`}
                   />

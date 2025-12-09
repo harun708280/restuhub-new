@@ -1,3 +1,4 @@
+'use client'
 import {
   Facebook,
   FacebookIcon,
@@ -7,15 +8,51 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+    const [open, setOpen] = useState(false);
+   useEffect(() => {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 20);
+      };
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+  
+    useEffect(() => {
+      const handleClick = (e: MouseEvent) => {
+        const drawer = document.getElementById("mobile-drawer");
+        if (drawer && !drawer.contains(e.target as Node) && open) {
+          setOpen(false);
+        }
+      };
+      if (open) {
+        document.addEventListener("mousedown", handleClick);
+      }
+      return () => document.removeEventListener("mousedown", handleClick);
+    }, [open]);
+  
+    const scrollToSection = (sectionId: string) => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+      setOpen(false);
+    };
+  
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setOpen(false);
+    };
+  
   return (
     <div className="bg-[#111827] pt-120 ">
       <div className="container">
         <div className="flex justify-between gap-6 flex-wrap">
           <div className=" w-[90%] md:w-[40%]">
-            <div className="flex items-center relative h-[50px] w-[190px]">
+            <div onClick={scrollToTop} className="flex items-center relative h-[50px] w-[190px] cursor-pointer">
               <Image src="/Images/logo.png" alt="Logo" fill priority />
             </div>
             <p className="text-white opacity-80 max-w-[277px] pt-5 lg:pt-5">
@@ -24,10 +61,10 @@ const Footer = () => {
           </div>
           <div className="text-white">
             <h6 className="text-lg md:text-xl font-semibold">Company</h6>
-            <div className="text-[16px] opacity-80 pt-5 lg:pt-7 space-y-1.5 flex flex-col gap-2">
-              <Link href="#">About</Link>
-              <Link href="#">How it works</Link>
-              <Link href="#">Why us</Link>
+            <div className="text-[16px] opacity-80 pt-5 lg:pt-7 space-y-1.5 flex flex-col gap-2 ">
+              <button className="text-left cursor-pointer" onClick={() => scrollToSection("how-it-works")}>How it Works</button>
+              <button className="text-left cursor-pointer" onClick={() => scrollToSection("pricing")}>Pricing </button>
+              <button className="text-left cursor-pointer" onClick={() => scrollToSection("why-us")}>Why us</button>
             </div>
           </div>
           <div className="text-white">

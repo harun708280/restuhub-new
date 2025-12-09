@@ -51,26 +51,26 @@ const Navbar = () => {
         }`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between py-4">
-          <button onClick={scrollToTop} className="relative h-[50px] w-[190px]">
+          <button onClick={scrollToTop} className="relative h-[50px] w-[190px] cursor-pointer">
             <Image src="/Images/logo.png" alt="Logo" fill priority />
           </button>
 
           <nav className="hidden md:flex gap-10 text-[18px] font-medium text-primary">
             <button
               onClick={() => scrollToSection("how-it-works")}
-              className="hover:text-secondary transition"
+              className="hover:text-secondary transition cursor-pointer"
             >
               How it works
             </button>
             <button
               onClick={() => scrollToSection("pricing")}
-              className="hover:text-secondary transition"
+              className="hover:text-secondary transition cursor-pointer" 
             >
               Pricing
             </button>
             <button
               onClick={() => scrollToSection("why-us")}
-              className="hover:text-secondary transition"
+              className="hover:text-secondary transition cursor-pointer"
             >
               Why us
             </button>
@@ -112,26 +112,26 @@ const Navbar = () => {
         <div className="flex flex-col gap-6 p-6 text-lg font-medium text-primary">
           <button
             onClick={() => scrollToSection("how-it-works")}
-            className="text-left hover:text-secondary transition"
+            className="text-left hover:text-secondary cursor-pointer transition"
           >
             How it works
           </button>
           <button
             onClick={() => scrollToSection("pricing")}
-            className="text-left hover:text-secondary transition"
+            className="text-left hover:text-secondary cursor-pointer transition"
           >
             Pricing
           </button>
           <button
             onClick={() => scrollToSection("why-us")}
-            className="text-left hover:text-secondary transition"
+            className="text-left hover:text-secondary cursor-pointer transition"
           >
             Why us
           </button>
 
           <div className="pt-6 space-y-4">
             <button
-              className="secondary-btn w-full py-3"
+              className="secondary-btn w-full py-3 cursor-pointer"
               onClick={() => setOpen(false)}
             >
               Login
