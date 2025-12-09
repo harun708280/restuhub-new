@@ -9,7 +9,6 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -18,7 +17,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
       const drawer = document.getElementById("mobile-drawer");
@@ -32,115 +30,122 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClick);
   }, [open]);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setOpen(false);
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    setOpen(false);
+  };
+
   return (
-    <div
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-lg" : "bg-transparent"
-      }`}
-    >
-      <div className="container flex items-center justify-between py-4">
-       
-        <div className="flex items-center relative h-[50px] w-[190px]">
-          <Image
-            src="/Images/logo.png"
-            alt="Logo"
-            fill
-            priority
-          />
+    <>
+      <div
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isScrolled ? "bg-white shadow-lg" : "bg-transparent"
+        }`}
+      >
+        <div className="container mx-auto px-4 flex items-center justify-between py-4">
+          <button onClick={scrollToTop} className="relative h-[50px] w-[190px]">
+            <Image src="/Images/logo.png" alt="Logo" fill priority />
+          </button>
+
+          <nav className="hidden md:flex gap-10 text-[18px] font-medium text-primary">
+            <button
+              onClick={() => scrollToSection("how-it-works")}
+              className="hover:text-secondary transition"
+            >
+              How it works
+            </button>
+            <button
+              onClick={() => scrollToSection("pricing")}
+              className="hover:text-secondary transition"
+            >
+              Pricing
+            </button>
+            <button
+              onClick={() => scrollToSection("why-us")}
+              className="hover:text-secondary transition"
+            >
+              Why us
+            </button>
+          </nav>
+
+          <div className="hidden md:flex items-center gap-4">
+            <button className="secondary-btn px-6 py-2">Login</button>
+            <button className="primary-btn px-6 py-2">Contact Us</button>
+          </div>
+
+          <button className="md:hidden" onClick={() => setOpen(true)}>
+            <Menu className="w-8 h-8 text-primary" />
+          </button>
         </div>
-
-       
-        <nav className="hidden md:flex gap-8 text-[18px] font-medium text-primary">
-          <Link href="#" className="hover:text-secondary transition">
-            How it works
-          </Link>
-          <Link href="#" className="hover:text-secondary transition">
-            Pricing
-          </Link>
-          <Link href="#" className="hover:text-secondary transition">
-            Why us
-          </Link>
-        </nav>
-
-       
-        <div className="hidden md:flex items-center gap-3">
-          <button className="secondary-btn h-fit">Login</button>
-          <button className="primary-btn h-fit">Contact Us</button>
-        </div>
-
-      
-        <button
-          className="md:hidden flex items-center justify-center"
-          onClick={() => setOpen(true)}
-        >
-          <Menu className="w-7 h-7 text-primary" />
-        </button>
       </div>
 
-     
       {open && (
-        <div className="fixed inset-0 bg-black/40 backdrop-blur-[1px] z-40"></div>
+        <div
+          className="fixed inset-0 bg-black/40 backdrop-blur-[1px] z-40"
+          onClick={() => setOpen(false)}
+        />
       )}
 
-   
       <div
         id="mobile-drawer"
-        className={`fixed top-0 right-0 h-full w-2/3 bg-white shadow-lg z-50 transform transition-transform duration-300 ${
+        className={`fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-white shadow-2xl z-50 transform transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-      
-        <div className="flex items-center justify-between p-4 border-b">
-          <div className="relative h-[38px] w-[140px]">
-            <Image
-              src="/Images/logo.png"
-              alt="Logo"
-              fill
-            />
-          </div>
-
+        <div className="flex items-center justify-between p-5 border-b">
+          <button onClick={scrollToTop} className="relative h-[40px] w-[150px]">
+            <Image src="/Images/logo.png" alt="Logo" fill />
+          </button>
           <button onClick={() => setOpen(false)}>
-            <X className="w-7 h-7 text-primary" />
+            <X className="w-8 h-8 text-primary" />
           </button>
         </div>
 
-     
-        <div className="flex flex-col gap-4 p-6 text-[18px] font-medium text-primary">
-          <Link
-            href="#"
-            onClick={() => setOpen(false)}
-            className="hover:text-secondary transition"
+        <div className="flex flex-col gap-6 p-6 text-lg font-medium text-primary">
+          <button
+            onClick={() => scrollToSection("how-it-works")}
+            className="text-left hover:text-secondary transition"
           >
             How it works
-          </Link>
-
-          <Link
-            href="#"
-            onClick={() => setOpen(false)}
-            className="hover:text-secondary transition"
+          </button>
+          <button
+            onClick={() => scrollToSection("pricing")}
+            className="text-left hover:text-secondary transition"
           >
             Pricing
-          </Link>
-
-          <Link
-            href="#"
-            onClick={() => setOpen(false)}
-            className="hover:text-secondary transition"
+          </button>
+          <button
+            onClick={() => scrollToSection("why-us")}
+            className="text-left hover:text-secondary transition"
           >
             Why us
-          </Link>
-
-        
-          <button className="secondary-btn h-fit w-full" onClick={() => setOpen(false)}>
-            Login
           </button>
 
-          <button className="primary-btn h-fit w-full" onClick={() => setOpen(false)}>
-            Contact Us
-          </button>
+          <div className="pt-6 space-y-4">
+            <button
+              className="secondary-btn w-full py-3"
+              onClick={() => setOpen(false)}
+            >
+              Login
+            </button>
+            <button
+              className="primary-btn w-full py-3"
+              onClick={() => setOpen(false)}
+            >
+              Contact Us
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

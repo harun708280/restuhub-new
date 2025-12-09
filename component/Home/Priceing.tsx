@@ -90,7 +90,7 @@ const Pricing = () => {
 
               <button
                 onClick={() => setBilling("monthly")}
-                className="relative z-10 px-10 py-3.5 rounded-full font-bold text-lg transition-colors duration-300"
+                className="relative z-10 px-10 py-2 rounded-full font-bold text-lg transition-colors duration-300"
               >
                 <span
                   className={
@@ -103,7 +103,7 @@ const Pricing = () => {
 
               <button
                 onClick={() => setBilling("yearly")}
-                className="relative z-10 px-10 py-3.5 rounded-full font-bold text-lg flex items-center gap-3 transition-colors duration-300"
+                className="relative z-10 px-10 py-2 rounded-full font-bold text-lg flex items-center gap-3 transition-colors duration-300"
               >
                 <span
                   className={
@@ -150,7 +150,7 @@ const Pricing = () => {
                 <p className="text-gray-600 mb-8">{plan.description}</p>
 
                 <button
-                  className={`relative w-full overflow-hidden py-4 rounded-2xl font-bold text-lg 
+                  className={`relative w-full overflow-hidden py-2.5 rounded-2xl font-bold text-lg 
     flex items-center justify-center gap-3 
     transition-all duration-500 ease-out
     group/btn isolate cursor-pointer

@@ -57,10 +57,15 @@ const ManageReviews = () => {
           {data.map((item, index) => (
             <div
               key={index}
-              className="bg-white flex-col  rounded-xl py-5 px-3 lg:py-9 lg:px-7.5  flex border border-[#0000000D] "
-
-              style={{ boxShadow: "0px 4px 34px 0px #0000000A" }}
+              className="group relative bg-white/70 backdrop-blur-xl rounded-2xl p-5 lg:p-7 
+             border border-[#0000000D] overflow-hidden
+             transition-all duration-700 ease-out
+             hover:bg-white/90 hover:backdrop-blur-2xl
+       
+             cursor-pointer shadow-[0px 4px 34px 0px #0000000A]"
             >
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+
               <div
                 className={`flex justify-center items-center h-12 w-12 mb-4 rounded-xl ${item.iconColor}`}
               >
@@ -71,8 +76,11 @@ const ManageReviews = () => {
                   height={24}
                 />
               </div>
-              <h3 className="font-semibold text-lg md:text-2xl  mb-2">{item.title}</h3>
-              <p className="text-sm text-[#5a6370]">{item.des}</p>
+
+              <h3 className="font-bold text-2xl mb-4">
+                {item.title}
+              </h3>
+              <p className="text-gray-700 font-medium">{item.des}</p>
             </div>
           ))}
         </div>

@@ -45,7 +45,7 @@ body {
   }
 }
 
-/* Description */
+
 .desc {
   font-family: var(--font-inter);
   font-weight: 400;
@@ -151,7 +151,7 @@ body {
 
 
 
-/* Shine Sweep Effect (Premium Touch) */
+
 .primary-btn::before {
   content: "";
   position: absolute;
@@ -221,9 +221,7 @@ body {
 
 
 .secondary-btn:hover {
-  background: #333333;
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  
 }
 
 

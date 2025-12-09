@@ -32,14 +32,14 @@ const swiperRef = useRef<SwiperType | null>(null);
   ];
 
   return (
-    <div className="pt-20 lg:pt-32">
+    <div className="pt-7 lg:pt-28 overflow-hidden px-4 mf:px-0">
       <div
         className="  bg-no-repeat bg-top rounded-3xl -mx-4 md:mx-0 overflow-hidden "
         style={{ backgroundImage: "url('/images/saying-bg.png')" }}
       >
-        <div className="container ">
+        <div className="container">
 
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pt-10">
+          <div className="flex flex-col-reverse md:flex-row justify-between items-start md:items-center gap-6 pt-10">
             <h2 className="title text-center md:text-left max-w-2xl">
               What Our Partners Are Saying
             </h2>
@@ -95,7 +95,7 @@ const swiperRef = useRef<SwiperType | null>(null);
               }}
               onSwiper={(swiper) => {
                 swiperRef.current = swiper;
-                // Initial state
+       
                 setIsPrevDisabled(swiper.isBeginning);
                 setIsNextDisabled(swiper.isEnd);
               }}
@@ -108,7 +108,12 @@ const swiperRef = useRef<SwiperType | null>(null);
               {testimonials.map((item, index) => (
                 <SwiperSlide key={index}>
                   <div className="px-4 md:px-0">
-                    <div className="border border-black/10 bg-white/95 backdrop-blur-sm  rounded-2xl p-6 lg:p-8 h-full flex flex-col hover:shadow-2xl transition-shadow duration-300">
+                    <div className="border group border-black/10 bg-white/95 backdrop-blur-sm  rounded-2xl p-6 lg:p-8 h-full flex flex-col  transition-shadow duration-300  overflow-hidden
+             transition-all duration-700 ease-out
+             hover:bg-white/90 hover:backdrop-blur-2xl
+       
+             cursor-pointer shadow-[0px 4px 34px 0px #0000000A]">
+                     <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                       <Image
                         src="/images/5star.png"
                         alt="5 stars"
@@ -116,7 +121,7 @@ const swiperRef = useRef<SwiperType | null>(null);
                         height={24}
                         className="mb-5"
                       />
-                      <p className="text-gray-700 text-base lg:text-lg leading-relaxed flex-grow">
+                      <p className="text-gray-700 text-base lg:text-lg leading-relaxed flex-row">
                         {item.text}
                       </p>
                       <div className="flex items-center gap-4 mt-8">

@@ -14,7 +14,7 @@ const Footer = () => {
     <div className="bg-[#111827] pt-120 ">
       <div className="container">
         <div className="flex justify-between gap-6 flex-wrap">
-          <div className="lg:w-[40%]">
+          <div className=" w-[90%] md:w-[40%]">
             <div className="flex items-center relative h-[50px] w-[190px]">
               <Image src="/Images/logo.png" alt="Logo" fill priority />
             </div>
