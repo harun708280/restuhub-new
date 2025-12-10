@@ -117,7 +117,7 @@ const Saying = () => {
              transition-all duration-700 ease-out
              hover:bg-white/90 hover:backdrop-blur-2xl
        
-             cursor-pointer shadow-[0px 4px 34px 0px #0000000A]"
+              shadow-[0px 4px 34px 0px #0000000A]"
                     >
                       <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                       <Image

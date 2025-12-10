@@ -14,12 +14,11 @@ const CoolFeature = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.4 }}
-            className="max-w-[600px] text-center mx-auto"
+            className="max-w-[900px] text-center mx-auto"
           >
-            <h2 className="title text-white">Let’s know our cool feature</h2>
+            <h2 className="title text-white">Discover What Makes RestorHub Stand Out</h2>
             <p className="desc text-white! pt-2 lg:pt-4">
-              From smart tools to seamless design, explore what makes our
-              platform powerful, user-friendly, and built for real impact.
+              RestorHub gives you the tools to reply to reviews quickly, stay organized, and build customer trust. It’s simple to use and helps you manage everything without needing extra staff or time.
             </p>
           </motion.div>
 
@@ -42,12 +41,13 @@ const CoolFeature = () => {
                 >
                   <h4 className="sub-title">
                     {index === 0
-                      ? "Manage Every single Reviews In one platform"
+                      ? "Manage Every Single Review in One Place"
                       : "Effortless Review Replies"}
                   </h4>
                   <p className="sub-desc text-[#181818CC] pt-2 pb-8">
-                    Respond smarter with AI or manually — always review, approve,
-                    or edit before hitting.
+                    {index === 0
+                      ? "Easily view and manage all your Google reviews from one clean dashboard. Filter by rating, photo, or status. Sort by date and stay in full control of every customer interaction."
+                      : "AI drafts high-quality replies for each review in your chosen tone: friendly, natural, or professional. Review, edit, or approve before publishing. Everything is in your hands."}
                   </p>
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -84,8 +84,8 @@ const CoolFeature = () => {
                 <div className="max-w-xl">
                   <h4 className="sub-title">No Random Reply</h4>
                   <p className="sub-desc text-[#181818CC] pt-2 max-w-[517px]">
-                    Respond smarter with AI or manually — always review,
-                    approve, or edit before hitting.
+                    Every reply is thoughtful, relevant, and checked. Nothing gets published unless you approve it. You stay in control.
+
                   </p>
 
                   <div className="flex gap-4 items-center md:flex-row flex-col pt-6 lg:pt-8">

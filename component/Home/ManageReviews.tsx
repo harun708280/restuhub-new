@@ -6,38 +6,38 @@ const ManageReviews = () => {
   const data = [
     {
       icon: "/icon/white-star.svg",
-      title: "AI-Powered Responses",
-      des: "Advanced AI generates natural, contextual replies that sound authentically human.",
+      title: "Smart AI replies",
+      des: "AI reads each review and writes a natural, personal response. Nothing gets published without your approval unless you enable auto-reply.",
       iconColor: "bg-[#00B67A]",
     },
     {
       icon: "/icon/watch.svg",
-      title: "Lightning Fast",
-      des: "Respond to reviews within hours, not days. Keep your customers engaged and happy.",
+      title: "Fast response time",
+      des: "Reply within minutes or hours, even during busy times. You control the timing by setting what works best for your team.",
       iconColor: "bg-[#219BE5]",
     },
     {
       icon: "/icon/emoji.svg",
-      title: "Sentiment Result",
-      des: "Every response maintains your brand voice—friendly, natural, and professional.",
+      title: "Clear guest insights",
+      des: "Find out what guests talk about most, like food, service, price, or experience. No need to read everything manually. Key topics are highlighted for you.",
       iconColor: "bg-[#9E57F7]",
     },
     {
       icon: "/icon/boost.svg",
-      title: "Boost Reputation",
-      des: "Timely responses improve ratings and show customers you care about their feedback.",
+      title: "More 5-star reviews",
+      des: "Thoughtful replies show you care. When customers see you respond, they feel valued. New guests are more likely to leave positive reviews too.",
       iconColor: "bg-[#F25237]",
     },
     {
       icon: "/icon/light.svg",
-      title: "Lightning Fast",
-      des: "Respond to reviews within hours, not days. Keep your customers engaged and happy.",
+      title: "Easy to use",
+      des: "No training needed. Just connect your Google account, choose your settings like tone and timing, and start replying.",
       iconColor: "bg-[#F2416B]",
     },
     {
       icon: "/icon/mike.svg",
-      title: "Professional Tone",
-      des: "Every response maintains your brand voice—friendly, natural, and professional.",
+      title: "Your tone, your way",
+      des: "Select a reply style that fits your brand. Choose from friendly, natural, or professional. Every reply matches your restaurant’s personality.",
       iconColor: "bg-[#EDAE09]",
     },
   ];
@@ -46,12 +46,12 @@ const ManageReviews = () => {
       <div className="container">
         <FadeInWhenVisible>
           <div className="max-w-[709px] mx-auto space-y-4 text-center">
-            <h2 className="title max-w-[562px] mx-auto">
-              Everything You Need to Manage Reviews
+            <h2 className="title max-w-[662px] mx-auto">
+              Instantly Reply to Reviews and Build a Stronger Reputation
             </h2>
             <p className="desc">
-              Powerful features designed specifically for busy restaurant owners
-              who want to maintain excellent customer relationships.
+             Everything you need to manage reviews faster, smarter, and with zero extra staff. Let AI do the hard work. You just approve and grow.
+
             </p>
           </div>
         </FadeInWhenVisible>
@@ -65,7 +65,7 @@ const ManageReviews = () => {
              transition-all duration-700 ease-out
              hover:bg-white/90 hover:backdrop-blur-2xl
        
-             cursor-pointer shadow-[0px 4px 34px 0px #0000000A]"
+              shadow-[0px 4px 34px 0px #0000000A] h-full"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
 

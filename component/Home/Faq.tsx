@@ -10,17 +10,46 @@ interface FaqItem {
 
 const faqData: FaqItem[] = [
   {
-    question: "How much can I save with renewable energy?",
-    answer: "Savings depend on your energy usage, system size, and location.",
+    question: "Do replies get published automatically?",
+    answer: "No. Replies are never published without your approval unless you turn on the auto-publish option. You stay in control of every response.",
   },
   {
-    question: "How long does installation take?",
+    question: " Can I change the tone or style of replies?",
     answer:
-      "Typically, installation takes 1-3 days depending on system complexity.",
+      "Yes. You can choose a tone that fits your brand — friendly, professional, or casual. AI will write replies in that style every time.",
   },
   {
-    question: "Do you offer financing options?",
-    answer: "Yes, flexible plans are available to suit your budget.",
+    question: "Will this work for multiple restaurant locations?",
+    answer: "Yes. If you manage more than one restaurant, you can connect each location to your dashboard and manage all reviews in one place.",
+  },
+  {
+    question: "Is it safe to connect my Google account?",
+    answer: "Yes. We use secure Google authentication (OAuth), and you can disconnect your account anytime. We never post without permission.",
+  },
+  {
+    question: "Do I need to install anything or hire staff?",
+    answer: "No. It’s 100% web-based. Just log in, connect your Google account, set your preferences, and you’re ready to go. No downloads, no extra staff.",
+  },
+  {
+    question: " Can I edit or rewrite the AI reply?",
+    answer: "Absolutely. You can edit, rewrite, or customize any reply before posting. It’s designed to save you time, not take away your control.",
+  },
+ 
+  {
+    question: "What platforms does this work with?",
+    answer: "We currently support Google reviews. Support for Facebook and TripAdvisor is coming soon.",
+  },
+  {
+    question: " Can my staff help manage the reviews too?",
+    answer: "Yes. You can invite team members, assign permission levels, and approve replies together using team access.",
+  },
+  {
+    question: " Does the AI improve based on my edits?",
+    answer: "Yes. The more you approve or edit replies, the better the AI learns your preferred tone and style.",
+  },
+  {
+    question: " What if I don’t want to use AI at all?",
+    answer: "You can turn off AI completely and write every reply manually. The dashboard still helps you stay organized and track review performance.",
   },
 ];
 

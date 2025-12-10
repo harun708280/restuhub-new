@@ -35,9 +35,9 @@ const Works = () => {
         <FadeInWhenVisible>
           <div className="max-w-[709px] mx-auto space-y-3 text-center">
             <h2 className="title max-w-[562px] mx-auto">Simple 4-Step Process</h2>
-            <p className="desc">
+            {/* <p className="desc">
               Four simple steps to transform your review management process
-            </p>
+            </p> */}
           </div>
         </FadeInWhenVisible>
 
