@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/shared/Navber";
 import Footer from "@/component/shared/Footer";
+import CookieBanner from "@/component/shared/CookieBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -35,11 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased bg-[#ffffff]`}
       >
         <Navbar/>
         {children}
         <Footer/>
+        
       </body>
     </html>
   );

@@ -16,9 +16,9 @@ const CoolFeature = () => {
             viewport={{ once: true, amount: 0.4 }}
             className="max-w-[900px] text-center mx-auto"
           >
-            <h2 className="title text-white">Discover What Makes RestorHub Stand Out</h2>
+            <h2 className="title text-white">Discover What Makes RestruhubStand Out</h2>
             <p className="desc text-white! pt-2 lg:pt-4">
-              RestorHub gives you the tools to reply to reviews quickly, stay organized, and build customer trust. It’s simple to use and helps you manage everything without needing extra staff or time.
+              Restruhubgives you the tools to reply to reviews quickly, stay organized, and build customer trust. It’s simple to use and helps you manage everything without needing extra staff or time.
             </p>
           </motion.div>
 

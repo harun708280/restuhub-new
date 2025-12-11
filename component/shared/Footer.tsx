@@ -1,140 +1,96 @@
-'use client'
+"use client";
+
 import {
   Facebook,
-  FacebookIcon,
   Instagram,
-  Linkedin,
-  Twitter,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useRouter, usePathname } from "next/navigation";
 
 const Footer = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-    const [open, setOpen] = useState(false);
-   useEffect(() => {
-      const handleScroll = () => {
-        setIsScrolled(window.scrollY > 20);
-      };
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-  
-    useEffect(() => {
-      const handleClick = (e: MouseEvent) => {
-        const drawer = document.getElementById("mobile-drawer");
-        if (drawer && !drawer.contains(e.target as Node) && open) {
-          setOpen(false);
-        }
-      };
-      if (open) {
-        document.addEventListener("mousedown", handleClick);
-      }
-      return () => document.removeEventListener("mousedown", handleClick);
-    }, [open]);
-  
-    const scrollToSection = (sectionId: string) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const scrollToSection = (sectionId: string) => {
+    if (pathname !== "/") {
+      // Navigate to home with query param
+      router.push(`/?scrollTo=${sectionId}`);
+    } else {
       const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-      setOpen(false);
-    };
-  
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      setOpen(false);
-    };
-  
+      if (element) element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <div className="bg-[#111827] pt-120 ">
-      <div className="container">
-        <div className="flex justify-between gap-6 flex-wrap">
-          <div className=" w-[90%] md:w-[40%]">
-            <div onClick={scrollToTop} className="flex items-center relative h-[50px] w-[190px] cursor-pointer">
+    <footer className="bg-[#111827] pt-24">
+      <div className="container mx-auto">
+        <div className="flex flex-wrap justify-between gap-6">
+          {/* Logo + Description */}
+          <div className="w-[90%] md:w-[40%]">
+            <div onClick={scrollToTop} className="relative h-[50px] w-[190px] cursor-pointer">
               <Image src="/Images/logo.png" alt="Logo" fill priority />
             </div>
-            <p className="text-white opacity-80 max-w-[277px] pt-5 lg:pt-5">
+            <p className="text-white opacity-80 max-w-[277px] pt-5">
               AI-powered review management for busy restaurant owners.
             </p>
           </div>
+
+          {/* Company Section */}
           <div className="text-white">
             <h6 className="text-lg md:text-xl font-semibold">Company</h6>
-            <div className="text-[16px] opacity-80 pt-5 lg:pt-7 space-y-1.5 flex flex-col gap-2 ">
-              <button className="text-left cursor-pointer" onClick={() => scrollToSection("how-it-works")}>How it Works</button>
-              <button className="text-left cursor-pointer" onClick={() => scrollToSection("pricing")}>Pricing </button>
-              <button className="text-left cursor-pointer" onClick={() => scrollToSection("why-us")}>Why us</button>
+            <div className="flex flex-col gap-2 pt-5 text-[16px] opacity-80">
+              <button onClick={() => scrollToSection("how-it-works")} className="text-left cursor-pointer hover:text-secondary transition">
+                How it works
+              </button>
+              <button onClick={() => scrollToSection("pricing")} className="text-left cursor-pointer hover:text-secondary transition">
+                Pricing
+              </button>
+              <button onClick={() => scrollToSection("why-us")} className="text-left cursor-pointer hover:text-secondary transition">
+                Why us
+              </button>
             </div>
           </div>
+
+          {/* Resources */}
           <div className="text-white">
             <h6 className="text-lg md:text-xl font-semibold">Resources</h6>
-            <div className="text-[16px] opacity-80 pt-5 lg:pt-7 space-y-1.5 flex flex-col gap-2">
-              <Link href="#">Contact Us</Link>
-              <Link href="#">FAQ’s</Link>
+            <div className="flex flex-col gap-2 pt-5 text-[16px] opacity-80">
+              <button className="text-left cursor-pointer hover:text-secondary transition" onClick={() => scrollToSection("contact")} >Contact Us</button>
+              <button className="text-left cursor-pointer hover:text-secondary transition" onClick={() => scrollToSection("faq")} >FAQ’s</button>
             </div>
           </div>
+
+          {/* Policies */}
           <div className="text-white">
-            <h6 className="text-lg md:text-xl font-semibold">Company</h6>
-            <div className="text-[16px] opacity-80 pt-5 lg:pt-7 space-y-1.5 flex flex-col gap-2">
-              <Link href="#">Terms & Conditions</Link>
-              <Link href="#">Privacy Policy</Link>
-              <Link href="#">Legal</Link>
+            <h6 className="text-lg md:text-xl font-semibold">Policies</h6>
+            <div className="flex flex-col gap-2 pt-5 text-[16px] opacity-80">
+              <Link href="/Terms&Conditions">Terms & Conditions</Link>
+              <Link href="/privacy">Privacy Policy</Link>
             </div>
           </div>
         </div>
-        <div className="pt-60 ">
-          <div className="border-t border-white/10  p-5  md:py-8 text-white flex gap-6 flex-wrap justify-between">
-            <span>© 2025 , All Rights Reserved</span>
 
-            <div className="flex gap-3 items-center">
-              <Link href="#" target="_blank">
-                <div className="">
-                  <Facebook className="h-10 w-10 p-2 rounded-full 
-                        bg-[#FFFFFF0D] text-gray-400 
-                        hover:bg-secondary hover:text-white 
-                        hover:shadow-xl hover:shadow-secondary
-                        hover:-translate-y-1 
-                        transition-all duration-400 ease-out"/>
-                </div>
-              </Link>
-              <Link href="#" target="_blank">
-                <div className="">
-                  <Twitter className="h-10 w-10 p-2 rounded-full 
-                        bg-[#FFFFFF0D] text-gray-400 
-                        hover:bg-secondary hover:text-white 
-                        hover:shadow-xl hover:shadow-secondary
-                        hover:-translate-y-1 
-                        transition-all duration-400 ease-out" />
-                </div>
-              </Link>
-              <Link href="#" target="_blank">
-                <div className="">
-                  <Instagram className="h-10 w-10 p-2 rounded-full 
-                        bg-[#FFFFFF0D] text-gray-400 
-                        hover:bg-secondary hover:text-white 
-                        hover:shadow-xl hover:shadow-secondary
-                        hover:-translate-y-1 
-                        transition-all duration-400 ease-out"/>
-                </div>
-              </Link>
-              <Link href="#" target="_blank">
-                <div className="group">
-                  <Linkedin
-                    className="h-10 w-10 p-2 rounded-full 
-                        bg-[#FFFFFF0D] text-gray-400 
-                        hover:bg-secondary hover:text-white 
-                        hover:shadow-xl hover:shadow-secondary
-                        hover:-translate-y-1 
-                        transition-all duration-400 ease-out"
-                  />
-                </div>
-              </Link>
-            </div>
+        {/* Bottom Bar */}
+        <div className="mt-12 border-t border-white/10 flex flex-wrap justify-between items-center text-white py-8">
+          <span>© 2025, All Rights Reserved</span>
+
+          <div className="flex gap-3 items-center mt-4 md:mt-0">
+            <Link href="#" target="_blank">
+              <Facebook className="h-10 w-10 p-2 rounded-full bg-[#FFFFFF0D] text-gray-400 hover:bg-secondary hover:text-white hover:shadow-xl hover:shadow-secondary hover:-translate-y-1 transition-all duration-400 ease-out"/>
+            </Link>
+            <Link href="#" target="_blank">
+              <Instagram className="h-10 w-10 p-2 rounded-full bg-[#FFFFFF0D] text-gray-400 hover:bg-secondary hover:text-white hover:shadow-xl hover:shadow-secondary hover:-translate-y-1 transition-all duration-400 ease-out"/>
+            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

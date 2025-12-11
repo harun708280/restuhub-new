@@ -184,11 +184,11 @@ body {
   gap: 10px;
   justify-content: center;
   align-items: center;
-  padding: 12px 28px;
+  padding: 11px 28px  !important;
   font-weight: 600;
   font-size: 1.05rem;
   color: white;
-  background: #404040;                    /* তোমার ডার্ক গ্রে */
+  background: #404040;                    
   border: none;
   border-radius: 14px;
   cursor: pointer;
@@ -289,4 +289,24 @@ body {
     font-size: 14px;
     line-height: 1.4;
   }
+}
+
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-[shimmer_2s_infinite] {
+  animation: shimmer 2s infinite linear;
+}
+
+
+html {
+  scroll-behavior: smooth;
+  scorll-top:96px;
 }

@@ -3,6 +3,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { FadeInWhenVisible } from "../shared/FadeInWhenVisible";
+import Link from "next/link";
 
 const ReviewManagement = () => {
   return (
@@ -22,13 +23,15 @@ const ReviewManagement = () => {
 
                 </h2>
                 <p className="text-white! desc pt-5 pb-8">
-                 Join growing restaurants using RestorHub to boost ratings, strengthen customer trust, and save hours on review management. Start your free 7-day trial and turn feedback into real business results
+                 Join growing restaurants using Restruhubto boost ratings, strengthen customer trust, and save hours on review management. Start your free 7-day trial and turn feedback into real business results
                 </p>
 
                 <div className="flex gap-2 items-center flex-wrap">
-                  <button className="primary-btn w-full md:w-fit">
+                     <a href="#pricing" >
+                     <button className="primary-btn w-full md:w-fit">
                     <span>Start Free Trail</span> <ArrowRight />
-                  </button>
+                  </button></a>
+                  
                   <button className="bg-white justify-center flex gap-2 items-center border px-4 py-2.5 rounded-xl w-full md:w-fit border-[#00000033] cursor-pointer hover:bg-[#f0f0f0] hover:border-[#000000] transition-colors duration-300">
                     <span>Make an Schedule</span> <Calendar height={20} />
                   </button>

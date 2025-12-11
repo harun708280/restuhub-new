@@ -3,10 +3,11 @@ import Image from "next/image";
 import React from "react";
 import BrandLogo from "./BrandLogo";
 import { FadeInWhenVisible } from "../shared/FadeInWhenVisible";
+import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="pt-[120px] md:pt-[200px] relative overflow-hidden ">
+    <div className="pt-[120px] md:pt-[160px] relative overflow-hidden ">
       <div className="absolute top-[62%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-80 w-[500px] bg-secondary blur-3xl opacity-10 z-0"></div>
       <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-80 w-80 bg-secondary blur-3xl opacity-10 z-0"></div>
       <div className="container relative z-20">
@@ -17,7 +18,7 @@ const Hero = () => {
                 <Image src={"/icon/star.svg"} alt=" star" fill priority />
               </div>
               <span className="text-sm md:text-[16px] font-medium text-secondary">
-                AI-Powered Review Management
+               No more missed replies. No more generic answer
               </span>
             </div>
           </FadeInWhenVisible>
@@ -25,19 +26,22 @@ const Hero = () => {
           <FadeInWhenVisible delay={0.2}>
             <div className="text-center max-w-[887px] mx-auto ">
               <h1 className=" font-bold text-[35px] md:text-[45px] lg:text-[60px] leading-tight lg:leading-[70px] pt-5 lg:pt-8 ">
-                Get Review Replies Done 
+                Let AI Handle Your Reviews  
 
-                <span className="text-secondary"> Automatically, No VA Needed</span>
+                <span className="text-secondary"> You Stay Focused on Food</span>
               </h1>
               <p className="desc pt-3 lg:pt-5">
-                Each review is a moment to show customers you care. RestorHub creates fast, natural replies that keep guests feeling heard. Boost your reputation, strengthen loyalty, and reclaim time to focus on delivering great food and service.
+               Restruhub automatically responds to your customer reviews just like a real human would. Keep your customers happy, protect your reputation, and win back your time.
+
 
               </p>
 
               <div className="flex gap-4 justify-center items-center md:flex-row flex-col pt-6 lg:pt-10">
-                <button className="primary-btn w-full md:w-fit">
+               <a href="#pricing" >
+                 <button className="primary-btn w-full md:w-fit">
                   <span>Start Free Trail</span> <ArrowRight />
-                </button>
+                </button></a>
+               
                 <button className="bg-white border px-4 py-2.5 rounded-xl w-full md:w-fit border-[#00000033] cursor-pointer hover:bg-[#f0f0f0] hover:border-[#000000] transition-colors duration-300">
                   <span>Sign Up Now</span>
                 </button>
@@ -46,14 +50,14 @@ const Hero = () => {
           </FadeInWhenVisible>
         </div>
 
-        <FadeInWhenVisible delay={0.6}>
+        {/* <FadeInWhenVisible delay={0.6}>
           <div className="pt-60 text-center text-[#535862] pb-5  md:pb-[30px]">
             <span className=" ">Trusted by 4,000+ companies</span>
           </div>
-        </FadeInWhenVisible>
+        </FadeInWhenVisible> */}
       </div>
 
-        <BrandLogo />
+        {/* <BrandLogo /> */}
 
         <div className="pt-120"></div>
    

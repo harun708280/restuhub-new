@@ -7,13 +7,13 @@ const Works = () => {
     {
       icon: "/icon/home.svg",
       title: "Connect Your Reviews",
-      des: "Link your Google account so RestorHub can import all your customer reviews automatically.",
+      des: "Link your Google account so Restruhubcan import all your customer reviews automatically.",
       iconColor: "bg-[#359ACD]",
     },
     {
       icon: "/icon/paper.svg",
       title: "Import or Sync Reviews",
-      des: "RestorHub brings in your latest Google reviews and keeps them updated in real time.",
+      des: "Restruhubbrings in your latest Google reviews and keeps them updated in real time.",
       iconColor: "bg-[#099250]",
     },
     {
@@ -25,7 +25,7 @@ const Works = () => {
     {
       icon: "/icon/verify.svg",
       title: "Customize & Publish",
-      des: "Fine-tune tone and wording, then publish your replies directly from RestorHub.",
+      des: "Fine-tune tone and wording, then publish your replies directly from Restruhub.",
       iconColor: "bg-[#7435CD]",
     },
   ];
@@ -49,7 +49,7 @@ const Works = () => {
              transition-all duration-700 ease-out
              hover:bg-white/90 hover:backdrop-blur-2xl
        
-             cursor-pointer shadow-[0px 4px 34px 0px #0000000A]"
+              shadow-[0px 4px 34px 0px #0000000A]"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
                 <div
