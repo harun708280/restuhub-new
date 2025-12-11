@@ -102,7 +102,7 @@ const Faq: React.FC = () => {
                         {item.question}
                       </span>
                       <span
-                        className={`border h-7 w-7 rounded-full flex justify-center items-center p-4 transition-transform duration-300 ${
+                        className={`border h-7 w-7 rounded-full flex justify-center font-extrabold items-center p-4 transition-transform duration-300 ${
                           isOpen
                             ? "rotate-180 border-none bg-secondary text-white"
                             : "rotate-0 border-secondary"
