@@ -28,7 +28,7 @@ export default function CookieBanner() {
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: 100, opacity: 0 }}
       transition={{ duration: 0.6, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className="fixed bottom-4 max-w-[600px] left-4 right-4 md:left-8 md:right-8 z-[9999]"
+      className="fixed bottom-4 max-w-[520px] left-4 right-4 md:left-8 md:right-8 z-[9999]"
     >
       <div className="relative overflow-hidden rounded-2xl bg-white/90 backdrop-blur-2xl border border-white/30 shadow-2xl">
         {/* Subtle gradient overlay */}
