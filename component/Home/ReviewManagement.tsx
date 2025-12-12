@@ -27,7 +27,7 @@ const ReviewManagement = () => {
                 </p>
 
                 <div className="flex gap-2 items-center flex-wrap">
-                     <a href="#pricing" >
+                     <a href="#pricing" className="w-full md:w-fit">
                      <button className="primary-btn w-full md:w-fit">
                     <span>Start Free Trail</span> <ArrowRight />
                   </button></a>

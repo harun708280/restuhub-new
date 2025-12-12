@@ -28,7 +28,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-[#111827] pt-24">
+    <footer className="bg-[#111827] pt-100">
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-between gap-6">
           {/* Logo + Description */}

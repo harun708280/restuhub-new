@@ -38,7 +38,7 @@ const Hero = () => {
               </p>
 
               <div className="flex gap-4 justify-center items-center md:flex-row flex-col pt-6 lg:pt-10">
-               <a href="#pricing" >
+               <a href="#pricing"  className="w-full md:w-fit" >
                  <button className="primary-btn w-full md:w-fit">
                   <span>Start Free Trail</span> <ArrowRight />
                 </button></a>
