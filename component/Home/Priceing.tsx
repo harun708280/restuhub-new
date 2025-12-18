@@ -17,36 +17,36 @@ interface Plan {
 const plans: Plan[] = [
   {
     name: "Basic Plan",
-    tag: "BASIC PLANE",
+    tag: "Starter ",
     tagColor: "bg-blue-500",
-    monthlyPrice: "Free",
-    yearlyPrice: "Free",
-    description: "Basic review management for small restaurants",
+    monthlyPrice: "$29",
+    yearlyPrice: "$190",
+    description: "For individual restaurants",
     features: [
-      "Reply to up to 10 Google reviews",
-      "Basic analytics dashboard",
-      "Email support",
-      "AI-powered replies",
-      "Social media sharing",
-      "Competitor insights",
-      "Weekly reports",
+      "Reply to up to 100 Google reviews",
+      "Full analytics dashboard",
+    
+      "Weekly performance reports",
+      "Quick-reply templates",
+      "Real-time alerts",
+      "Priority support",
     ],
   },
   {
     name: "Advance",
     tag: "ADVANCE",
     tagColor: "bg-[#F16C11]",
-    monthlyPrice: "$29",
+    monthlyPrice: "$59",
     yearlyPrice: "$290",
-    description: "Basic review management for small restaurants",
+    description: " For small chains (up to 5 restaurants)",
     features: [
-      "Reply to up to 10 Google reviews",
-      "Basic analytics dashboard",
-      "Email support",
-      "AI-powered replies",
-      "Social media sharing",
-      "Competitor insights",
-      "Weekly reports",
+      "Reply to up to 400 Google reviews",
+      "Multi-location dashboard",
+      "Centralized review inbox",
+      "Team access (up to 3 members)",
+      
+      "Competitor review insights",
+      "Monthly optimization suggestions",
     ],
     popular: true,
   },
@@ -54,17 +54,17 @@ const plans: Plan[] = [
     name: "Pro",
     tag: "PRO",
     tagColor: "bg-[#B1060F]",
-    monthlyPrice: "$64",
+    monthlyPrice: "$99",
     yearlyPrice: "$640",
-    description: "Basic review management for small restaurants",
+    description: "For agencies & larger chains (up to 10 restaurants)",
     features: [
-      "Reply to up to 10 Google reviews",
-      "Basic analytics dashboard",
-      "Email support",
-      "AI-powered replies",
-      "Social media sharing",
-      "Competitor insights",
-      "Weekly reports",
+      "Unlimited Google review replies",
+      "Multi-team workflow",
+      "Automated tagging & categorization",
+      "Exportable CSV reports",
+      "Brand-level sentiment analytics",
+      "Custom onboarding + dedicated support",
+     
     ],
   },
 ];
@@ -125,12 +125,12 @@ const Pricing = () => {
              <FadeInWhenVisible key={index} delay={index * 0.1}>
             <div
              
-              className={`relative bg-white border-[#E8EDFA] border rounded-3xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 ${
+              className={`relative bg-white h-full border-[#E8EDFA] border rounded-3xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-3 ${
                 plan.popular ? "" : ""
               }`}
             >
               <div
-                className={`absolute top-6 left-6 ${plan.tagColor} text-white px-4 py-1 rounded-full text-sm font-bold`}
+                className={`absolute top-6 uppercase left-6 ${plan.tagColor} text-white px-4 py-1 rounded-full text-sm font-bold`}
               >
                 {plan.tag}
               </div>

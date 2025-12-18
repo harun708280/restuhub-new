@@ -31,10 +31,11 @@ const ReviewManagement = () => {
                      <button className="primary-btn w-full md:w-fit">
                     <span>Start Free Trail</span> <ArrowRight />
                   </button></a>
-                  
+                  <Link href="https://calendly.com/restruhub" target="_blank" className="w-full md:w-fit">
                   <button className="bg-white justify-center flex gap-2 items-center border px-4 py-2.5 rounded-xl w-full md:w-fit border-[#00000033] cursor-pointer hover:bg-[#f0f0f0] hover:border-[#000000] transition-colors duration-300">
                     <span>Make an Schedule</span> <Calendar height={20} />
                   </button>
+                  </Link>
                 </div>
               </div>
 

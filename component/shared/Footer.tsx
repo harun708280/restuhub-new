@@ -81,10 +81,10 @@ const Footer = () => {
           <span>© 2025, All Rights Reserved</span>
 
           <div className="flex gap-3 items-center mt-4 md:mt-0">
-            <Link href="#" target="_blank">
+            <Link href="https://www.facebook.com/profile.php?id=61585172453445&mibextid=wwXIfr&rdid=WZNj8mP9q0PaPtz1&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1E7XnsZgzJ%2F%3Fmibextid%3DwwXIfr#" target="_blank">
               <Facebook className="h-10 w-10 p-2 rounded-full bg-[#FFFFFF0D] text-gray-400 hover:bg-secondary hover:text-white hover:shadow-xl hover:shadow-secondary hover:-translate-y-1 transition-all duration-400 ease-out"/>
             </Link>
-            <Link href="#" target="_blank">
+            <Link href="https://www.instagram.com/restruhub/" target="_blank">
               <Instagram className="h-10 w-10 p-2 rounded-full bg-[#FFFFFF0D] text-gray-400 hover:bg-secondary hover:text-white hover:shadow-xl hover:shadow-secondary hover:-translate-y-1 transition-all duration-400 ease-out"/>
             </Link>
           </div>

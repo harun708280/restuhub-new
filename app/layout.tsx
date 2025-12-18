@@ -5,7 +5,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/shared/Navber";
 import Footer from "@/component/shared/Footer";
-import CookieBanner from "@/component/shared/CookieBanner";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

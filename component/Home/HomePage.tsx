@@ -33,7 +33,7 @@ const HomePage = () => {
 
       <section id="why-us" className="scroll-mt-24">
         <WhyLove />
-        <Saying />
+        {/* <Saying /> */}
       </section>
 
       <section id="contact" className="scroll-mt-24">
