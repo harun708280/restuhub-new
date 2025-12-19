@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Check, MoveRight } from "lucide-react";
 import { FadeInWhenVisible } from "../shared/FadeInWhenVisible";
 
+
 interface Plan {
   name: string;
   tag: string;

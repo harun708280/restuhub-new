@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: "ReviewFlow – The All-in-One Review Management Platform",
     description:
       "Automate review requests, respond faster, and improve your online reputation across Google, Facebook, Yelp & more.",
+      verification: {
+    google: "Org5r9Jt5ST9xlH0pyLhNXxXsBINQDebx81TK885cpQ",
+  },
 };
 
 export default function RootLayout({
@@ -35,6 +38,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased bg-[#ffffff]`}
       >
