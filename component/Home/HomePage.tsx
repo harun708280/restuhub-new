@@ -8,7 +8,6 @@ import WhyLove from "./WhyLove";
 import Saying from "./Saying";
 import ReviewManagement from "./ReviewManagement";
 import CookieBanner from "../shared/CookieBanner";
-
 const HomePage = () => {
   return (
     <>
