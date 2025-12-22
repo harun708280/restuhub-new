@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono, Inter } from "next/font/google";
 
 import "./globals.css";
 import Navbar from "@/component/shared/Navber";
 import Footer from "@/component/shared/Footer";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,12 +20,41 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://restruhub.com";
+
 export const metadata: Metadata = {
-  title: "ReviewFlow – The All-in-One Review Management Platform",
-    description:
-      "Automate review requests, respond faster, and improve your online reputation across Google, Facebook, Yelp & more.",
-      verification: {
+  metadataBase: new URL(SITE_URL),
+
+  title: {
+    default: "Google Business Profile Review Management Software - RestruHub",
+    template: "%s | RestruHub",
+  },
+
+  description:
+    "Top Google Business Profile review management software. Use our management tool to monitor online negative or positive reviews, ratings, and automate responses.",
+
+  alternates: {
+    canonical: "/", 
+  },
+
+  verification: {
     google: "Org5r9Jt5ST9xlH0pyLhNXxXsBINQDebx81TK885cpQ",
+  },
+
+  openGraph: {
+    type: "website",
+    siteName: "RestruHub",
+    url: SITE_URL,
+    title: "Google Business Profile Review Management Software - RestruHub",
+    description:
+      "Top Google Business Profile review management software to monitor reviews, ratings, and automate responses.",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Google Business Profile Review Management Software - RestruHub",
+    description:
+      "Manage Google reviews, ratings, and customer feedback automatically with RestruHub.",
   },
 };
 
@@ -38,14 +65,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased bg-[#ffffff]`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
-        
+        <Footer />
       </body>
     </html>
   );
