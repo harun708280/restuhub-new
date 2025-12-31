@@ -70,7 +70,7 @@ const Footer = () => {
           <div className="text-white">
             <h6 className="text-lg md:text-xl font-semibold">Policies</h6>
             <div className="flex flex-col gap-2 pt-5 text-[16px] opacity-80">
-              <Link href="/Terms&Conditions">Terms & Conditions</Link>
+              <Link href="/terms-conditions">Terms & Conditions</Link>
               <Link href="/privacy">Privacy Policy</Link>
             </div>
           </div>
@@ -82,10 +82,10 @@ const Footer = () => {
 
           <div className="flex gap-3 items-center mt-4 md:mt-0">
             <Link href="https://www.facebook.com/profile.php?id=61585172453445&mibextid=wwXIfr&rdid=WZNj8mP9q0PaPtz1&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1E7XnsZgzJ%2F%3Fmibextid%3DwwXIfr#" target="_blank">
-              <Facebook className="h-10 w-10 p-2 rounded-full bg-[#FFFFFF0D] text-gray-400 hover:bg-secondary hover:text-white hover:shadow-xl hover:shadow-secondary hover:-translate-y-1 transition-all duration-400 ease-out"/>
+              <Facebook className="h-10 w-10 p-2 rounded-full bg-[#FFFFFF0D] text-gray-400 hover:bg-secondary hover:text-white hover:shadow-xl hover:shadow-secondary hover:-translate-y-1 transition-all duration-400 ease-out" />
             </Link>
             <Link href="https://www.instagram.com/restruhub/" target="_blank">
-              <Instagram className="h-10 w-10 p-2 rounded-full bg-[#FFFFFF0D] text-gray-400 hover:bg-secondary hover:text-white hover:shadow-xl hover:shadow-secondary hover:-translate-y-1 transition-all duration-400 ease-out"/>
+              <Instagram className="h-10 w-10 p-2 rounded-full bg-[#FFFFFF0D] text-gray-400 hover:bg-secondary hover:text-white hover:shadow-xl hover:shadow-secondary hover:-translate-y-1 transition-all duration-400 ease-out" />
             </Link>
           </div>
         </div>

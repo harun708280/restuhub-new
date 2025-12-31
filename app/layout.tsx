@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "Top Google Business Profile review management software. Use our management tool to monitor online negative or positive reviews, ratings, and automate responses.",
 
   alternates: {
-    canonical: "/", 
+    canonical: "/",
   },
 
   verification: {
