@@ -47,14 +47,13 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar */}
+
       <div
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-          isScrolled ? "bg-white shadow" : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? "bg-white shadow" : "bg-transparent"
+          }`}
       >
         <div className="container mx-auto px-4 flex items-center justify-between py-4">
-          <button onClick={() => scrollToSection("home")}  className="relative h-[50px] w-[190px] cursor-pointer">
+          <button onClick={() => scrollToSection("home")} className="relative h-[50px] w-[190px] cursor-pointer">
             <Image src="/Images/logo.png" alt="Logo" fill priority />
           </button>
 
@@ -87,9 +86,8 @@ const Navbar = () => {
       {/* Mobile drawer */}
       <div
         id="mobile-drawer"
-        className={`fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-white shadow-2xl z-50 transform transition-transform duration-300 ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-white shadow-2xl z-50 transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         <div className="flex items-center justify-between p-5 border-b">
           <button onClick={scrollToTop} className="relative h-[40px] w-[150px]">

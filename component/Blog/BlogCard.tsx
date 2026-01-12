@@ -52,17 +52,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ index, image, category, title, desc
                         </div>
                     </div>
                 </div>
-                {/* <div className="relative w-full overflow-hidden">
-                    <img
-                        src={image}
-                        alt={title}
 
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">
-                        {category}
-                    </div>
-                </div> */}
 
                 <div className="bg-muted aspect-video md:h-[170px] h-full w-[30%] overflow-hidden rounded-xl">
                     <img

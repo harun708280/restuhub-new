@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "dotenv": "^17.2.3",
     "framer-motion": "^12.23.25",
     "lucide": "^0.556.0",
     "lucide-react": "^0.556.0",
@@ -22,12 +23,14 @@
     "swiper": "^12.0.3"
   },
   "devDependencies": {
+    "@prisma/client": "^6.19.1",
     "@tailwindcss/postcss": "^4.1.17",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.0.7",
+    "prisma": "^6.19.1",
     "tailwindcss": "^4.1.17",
     "typescript": "^5"
   }
