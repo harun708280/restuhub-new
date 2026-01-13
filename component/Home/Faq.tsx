@@ -70,11 +70,11 @@ const Faq: React.FC = () => {
 
   return (
     <div className="pt-120">
-      <div className="bg-[#E0E0E030] pt-100 pb-100">
+      <div className="bg-[#E0E0E030] pt">
         <div className="container  rounded-xl">
-          <div className="p-0 lg:p-14">
+          <div className="py-10 lg:py-14 ">
             <FadeInWhenVisible>
-              <div className="flex flex-col md:flex-row justify-between items-center gap-4 w-full p-4">
+              <div className="flex  flex-col md:flex-row justify-between items-center gap-4 w-full p-4">
                 <h2 className="title max-w-[505px] text-2xl font-bold">
                   Your Questions, Answered
                 </h2>
@@ -89,7 +89,7 @@ const Faq: React.FC = () => {
               </div>
             </FadeInWhenVisible>
 
-            <div className="pt-[20px] lg:pt-[40px]">
+            <div className="pt-[20px] lg:pt-[40px] md:px-16">
               {faqData.map((item, index) => {
                 const isOpen = openIndex === index;
                 return (
