@@ -32,7 +32,7 @@ const Navbar = () => {
 
   const scrollToSection = (sectionId: string) => {
     if (pathname !== "/") {
-      // Navigate to home with query param
+
       router.push(`/?scrollTo=${sectionId}`);
     } else {
       const element = document.getElementById(sectionId);
