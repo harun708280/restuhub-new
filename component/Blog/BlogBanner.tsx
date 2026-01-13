@@ -23,7 +23,7 @@ const BlogBanner = () => {
 
                     <FadeInWhenVisible delay={0.2}>
                         <div className="text-center max-w-[787px] mx-auto ">
-                            <h1 className=" font-bold text-[35px] md:text-[45px] lg:text-[60px] leading-tight lg:leading-[70px] pt-5 lg:pt-8 ">
+                            <h1 className=" font-bold  text-[25px] sm:text-[35px] md:text-[45px] lg:text-[60px] leading-tight lg:leading-[70px] pt-5 lg:pt-8 ">
                                 Our Blog
                                 <span className="text-secondary"> & Resources</span>
                             </h1>

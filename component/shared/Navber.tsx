@@ -113,7 +113,7 @@ const Navbar = () => {
           <button onClick={() => scrollToSection("why-us")} className="text-left hover:text-secondary cursor-pointer transition">
             Why us
           </button>
-          <Link href="/blog" className="text-left hover:text-secondary cursor-pointer transition">
+          <Link href="/blog" onClick={() => setOpen(false)} className="text-left hover:text-secondary cursor-pointer transition">
             Blog
           </Link>
 
