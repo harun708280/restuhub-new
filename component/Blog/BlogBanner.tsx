@@ -11,11 +11,11 @@ const BlogBanner = () => {
             <div className="container relative z-20">
                 <div className="flex flex-col justify-center items-center">
                     <FadeInWhenVisible delay={0}>
-                        <div className="flex gap-3 justify-center items-center bg-secondary/20 rounded-full w-fit py-2.5 px-4 pr-5">
-                            <div className=" relative h-6 w-6">
+                        <div className="flex sm:gap-3 gap-2 justify-center items-center bg-secondary/20 rounded-full w-fit py-2.5 px-4 pr-5">
+                            <div className=" relative h-5 w-5 md:h-6 md:w-6">
                                 <Image src={"/icon/star.svg"} alt=" star" fill priority />
                             </div>
-                            <span className="text-[10px] md:text-[16px] font-medium text-secondary">
+                            <span className="text-[12px] md:text-[16px] font-medium text-secondary">
                                 Insights, Trends & Tips for Restaurant Success
                             </span>
                         </div>

@@ -53,8 +53,8 @@ const BlogPage: React.FC<BlogPageProps> = ({ blogs, blogCategories }) => {
 
             <BlogBanner />
 
-            <div className="container mx-auto px-4 py-16">
-                <div className="flex flex-col lg:flex-row gap-12">
+            <div className="container mx-auto px-4 md:py-16 py-8">
+                <div className="flex flex-col lg:flex-row md:gap-12 gap-6">
 
                     <div className="w-full lg:w-2/3">
 

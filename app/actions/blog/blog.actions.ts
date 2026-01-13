@@ -3,7 +3,6 @@
 import { prisma } from "@/lib/prisma";
 import { revalidatePath } from "next/cache";
 
-/** ---------- Types ---------- */
 export type PostWithRelations = {
     id: string;
     title: string;
@@ -34,7 +33,6 @@ export type PostWithRelations = {
 
 type ActionResult<T> = { success: boolean; msg: string; post?: T; data?: T };
 
-/** ---------- List Posts ---------- */
 export const postList = async (): Promise<
     ActionResult<{
         postsWithContentObj: PostWithRelations[];
@@ -63,7 +61,7 @@ export const postList = async (): Promise<
             },
         });
 
-        // Convert content string to object if it's stored as a string, though in Restuhub Prisma it's Json
+
         const postsWithContentObj = posts.map((post) => ({
             ...post,
             content:
@@ -111,7 +109,7 @@ export const getPostBySlug = async (
 
         if (!post) return { success: false, msg: "Post not found" };
 
-        // Parse content safely
+
         let parsedContent: any = {};
         if (post.content) {
             parsedContent =
@@ -134,14 +132,13 @@ export const getPostBySlug = async (
     }
 };
 
-/** ---------- Create Comment ---------- */
 
 export const createComment = async (
     _prevState: any,
     formData: FormData
 ): Promise<ActionResult<any>> => {
     try {
-        // Extract values from FormData
+
         const postId = formData.get("postId")?.toString() || "";
         const name = formData.get("name")?.toString() || "";
         const email = formData.get("email")?.toString() || "";

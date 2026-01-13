@@ -43,12 +43,12 @@ const BlogDetailsPage = ({
     return (
         <div className="bg-white min-h-screen">
 
-            <section className=" pt-20 ">
+            <section className=" md:pt-20 pt-10 ">
 
 
 
                 <div className="container mx-auto px-4 py-16">
-                    <div className="flex flex-col lg:flex-row gap-16 relative">
+                    <div className="flex flex-col lg:flex-row md:gap-16 gap-6 relative">
 
                         <aside className="w-full lg:w-1/4">
                             <div className="lg:sticky lg:top-32 space-y-8">
@@ -80,7 +80,7 @@ const BlogDetailsPage = ({
                     </div>
 
 
-                    <div className="border-t border-gray-100 mt-32 pt-20">
+                    <div className="border-t border-gray-100 md:mt-32 mt-10 md:pt-20 pt-10">
                         <RelatedBlog
                             currentCategory={post.BlogCategory?.name}
                             currentId={post.postSlug}

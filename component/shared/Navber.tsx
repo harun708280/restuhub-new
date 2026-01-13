@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 
 const Navbar = () => {
   const router = useRouter();
@@ -67,6 +68,10 @@ const Navbar = () => {
             <button onClick={() => scrollToSection("why-us")} className="hover:text-secondary transition cursor-pointer">
               Why us
             </button>
+
+            <Link href="/blog" className="text-left hover:text-secondary cursor-pointer transition">
+              Blog
+            </Link>
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
@@ -89,7 +94,7 @@ const Navbar = () => {
         className={`fixed top-0 right-0 h-full w-80 max-w-[90vw] bg-white shadow-2xl z-50 transform transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"
           }`}
       >
-        <div className="flex items-center justify-between p-5 border-b">
+        <div className="flex items-center justify-between p-5 border-b border-[#00000033]">
           <button onClick={scrollToTop} className="relative h-[40px] w-[150px]">
             <Image src="/Images/logo.png" alt="Logo" fill />
           </button>
@@ -108,6 +113,9 @@ const Navbar = () => {
           <button onClick={() => scrollToSection("why-us")} className="text-left hover:text-secondary cursor-pointer transition">
             Why us
           </button>
+          <Link href="/blog" className="text-left hover:text-secondary cursor-pointer transition">
+            Blog
+          </Link>
 
           <div className="pt-6 space-y-4">
             <button className="secondary-btn w-full py-3 cursor-pointer" onClick={() => setOpen(false)}>

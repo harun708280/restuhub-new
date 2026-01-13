@@ -64,7 +64,7 @@ const NewBlogItem: React.FC<NewBlogItemProps> = ({ filterData }) => {
     }
 
     return (
-        <div className="space-y-8 ">
+        <div className="md:space-y-8 space-y-6">
             {currentBlogs.map((blog, index) => {
                 const firstParagraph =
                     blog?.content?.blocks?.find((b: any) => b.type === "paragraph")
@@ -85,10 +85,10 @@ const NewBlogItem: React.FC<NewBlogItemProps> = ({ filterData }) => {
                 return (
                     <div
                         key={blog.id || index}
-                        className="bg-white p-6 group flex flex-col md:flex-row gap-8 lg:gap-12 justify-between items-center rounded-xl overflow-hidden border border-[#0000000D] transition-all duration-700 ease-out hover:bg-white/90 hover:backdrop-blur-2xl shadow-[0px 4px 34px 0px #0000000A]"
+                        className="bg-white md:p-6 p-4 group flex flex-col-reverse md:flex-row gap-6 lg:gap-12 justify-between items-center rounded-xl overflow-hidden border border-[#0000000D] transition-all duration-700 ease-out hover:bg-white/90 hover:backdrop-blur-2xl shadow-[0px 4px 34px 0px #0000000A]"
                     >
                         <div className="flex flex-col flex-grow w-full md:w-[65%]">
-                            <div className="flex items-center gap-4 text-xs text-[#5a6370] mb-3">
+                            <div className="flex items-center md:gap-4 gap-2 text-xs text-[#5a6370] mb-3">
                                 <div className="flex items-center gap-1.5">
                                     <div className="relative w-5 h-5 rounded-full overflow-hidden border border-gray-100">
                                         <Image
@@ -103,11 +103,11 @@ const NewBlogItem: React.FC<NewBlogItemProps> = ({ filterData }) => {
                             </div>
 
                             <Link href={`/blog/${blog.postSlug}`}>
-                                <h3 className="text-xl md:text-2xl font-bold text-primary mb-3 group-hover:text-secondary transition-colors duration-300 line-clamp-2">
+                                <h3 className="text-xl md:text-2xl font-bold text-primary md:mb-3 mb-2 group-hover:text-secondary transition-colors duration-300 line-clamp-2">
                                     {title}
                                 </h3>
                             </Link>
-                            <p className="text-[#5a6370] mb-6 line-clamp-3 text-sm md:text-base leading-relaxed">
+                            <p className="text-[#5a6370] md:mb-6 mb-4 line-clamp-3 text-sm md:text-base leading-relaxed">
                                 {description}
                             </p>
 

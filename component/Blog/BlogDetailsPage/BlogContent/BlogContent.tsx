@@ -63,7 +63,7 @@ const BlogContent = ({ post }: BlogContentProps) => {
         switch (block.type) {
             case "header": {
                 const level = block.data.level || 2;
-                if (level === 2) return <h2 key={index} id={block?.id} className="text-3xl md:text-4xl font-bold text-primary mt-12 mb-6 leading-tight">{block.data.text}</h2>;
+                if (level === 2) return <h2 key={index} id={block?.id} className="text-2xl md:text-4xl font-bold text-primary md:mt-12 mt-8 md:mb-6 mb-4 leading-tight">{block.data.text}</h2>;
                 if (level === 3) return <h3 key={index} id={block?.id} className="text-2xl md:text-3xl font-bold text-primary mt-10 mb-5 leading-tight">{block.data.text}</h3>;
                 return <h4 key={index} id={block?.id} className="text-xl md:text-2xl font-bold text-primary mt-8 mb-4 leading-tight">{block.data.text}</h4>;
             }
@@ -76,7 +76,7 @@ const BlogContent = ({ post }: BlogContentProps) => {
                 return (
                     <p
                         key={index}
-                        className="text-lg text-gray-700 leading-relaxed mb-6"
+                        className="lg:text-lg text-base text-gray-700 leading-relaxed md:mb-6 mb-4"
                         dangerouslySetInnerHTML={{ __html: text }}
                     />
                 );
@@ -86,7 +86,7 @@ const BlogContent = ({ post }: BlogContentProps) => {
                 const items = block.data?.items || [];
                 if (block.data.style === "ordered") {
                     return (
-                        <ol key={index} className="list-decimal list-inside space-y-3 mb-8 ml-4 text-lg text-gray-700">
+                        <ol key={index} className="list-decimal list-inside space-y-3 md:mb-8 mb-6 ml-4 md:text-lg text-base text-gray-700">
                             {items.map((item: any, i: number) => (
                                 <li key={i} className="pl-2">{renderItem(item)}</li>
                             ))}
@@ -94,7 +94,7 @@ const BlogContent = ({ post }: BlogContentProps) => {
                     );
                 } else {
                     return (
-                        <ul key={index} className="space-y-4 mb-8">
+                        <ul key={index} className="space-y-4 md:mb-8 mb-6">
                             {items.map((item: any, i: number) => (
                                 <li key={i} className="flex items-start gap-3 text-lg text-gray-700">
                                     <CircleCheckBig size={20} className="text-secondary shrink-0 mt-1" />
@@ -105,10 +105,9 @@ const BlogContent = ({ post }: BlogContentProps) => {
                     );
                 }
             }
-
             case "image":
                 return block.data?.file?.url ? (
-                    <div key={index} className="my-10 rounded-2xl overflow-hidden shadow-lg">
+                    <div key={index} className="md:my-10 my-5 md:rounded-2xl rounded-xl overflow-hidden shadow-lg">
                         <img
                             src={block.data.file.url}
                             alt={block.data.caption || "Blog Image"}
@@ -175,9 +174,9 @@ const BlogContent = ({ post }: BlogContentProps) => {
 
     return (
         <article className="max-w-4xl mx-auto">
-            {/* Article Header */}
-            <header className="mb-12">
-                <div className="flex items-center gap-3 mb-6">
+
+            <header className="md:mb-12 mb-8">
+                <div className="flex items-center gap-3 md:mb-6 mb-4">
                     <span className="px-4 py-1.5 bg-secondary/10 text-secondary text-xs font-bold rounded-full uppercase tracking-wider">
                         {post.BlogCategory?.name || "Uncategorized"}
                     </span>
@@ -192,7 +191,7 @@ const BlogContent = ({ post }: BlogContentProps) => {
                     </time>
                 </div>
 
-                <h1 className="text-xl md:text-4xl lg:text-5xl font-bold text-primary mb-8 leading-tight">
+                <h1 className="text-xl md:text-4xl lg:text-5xl font-bold text-primary md:mb-8 mb-4 leading-tight">
                     {post.title}
                 </h1>
 
@@ -212,8 +211,8 @@ const BlogContent = ({ post }: BlogContentProps) => {
                 </div>
             </header>
 
-            {/* Featured Image */}
-            <div className="relative aspect-video rounded-3xl overflow-hidden mb-16 shadow-2xl">
+
+            <div className="relative aspect-video rounded-3xl overflow-hidden md:mb-16 mb-8 shadow-2xl">
                 <Image
                     src={post.bannerImage}
                     alt={post.title}
@@ -223,17 +222,17 @@ const BlogContent = ({ post }: BlogContentProps) => {
                 />
             </div>
 
-            {/* Article Body */}
+
             <div className="prose prose-lg max-w-none">
                 {post.content?.blocks?.map((block, i) => renderBlock(block, i))}
             </div>
 
-            {/* Promotion/CTA */}
-            <section className="bg-primary text-white p-10 md:p-16 rounded-3xl my-20 relative overflow-hidden group">
+
+            <section className="bg-primary text-white p-4 md:p-8 rounded-3xl md:my-20 my-10 relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl group-hover:bg-secondary/30 transition-colors duration-700"></div>
                 <div className="relative z-10">
-                    <h3 className="text-3xl font-bold mb-6">Kickstart Your Growth With Restuhub 🚀</h3>
-                    <p className="text-gray-300 text-lg mb-10 max-w-xl">
+                    <h3 className="lg:text-3xl text-xl font-bold mb-4 md:mb-6">Kickstart Your Growth With Restuhub 🚀</h3>
+                    <p className="text-gray-300 md:text-lg text-sm md:mb-10 mb-6 max-w-xl">
                         We help businesses dominate their local search and manage reviews automatically. Join the hundreds of brands scaling with Restuhub.
                     </p>
                     <Link
@@ -245,17 +244,17 @@ const BlogContent = ({ post }: BlogContentProps) => {
                 </div>
             </section>
 
-            <hr className="border-gray-100 my-16" />
+            <hr className="border-gray-100 lg:my-16 my-10" />
 
-            {/* Comments Section */}
-            <section id="comments" className="mt-20">
-                <div className="bg-white rounded-3xl border border-gray-100 p-8 md:p-12 shadow-sm mb-16">
-                    <h4 className="text-2xl font-bold text-primary mb-8">Leave a Reply</h4>
+
+            <section id="comments" className="md:mt-20 mt-8">
+                <div className="bg-white lg:rounded-3xl rounded-xl border border-gray-100 p-4 md:p-8 md:p-8 shadow-sm md:mb-16 mb-4">
+                    <h4 className="text-2xl font-bold text-primary md:mb-8 mb-4">Leave a Reply</h4>
                     <form action={fromAction} className="space-y-6">
                         <input type="hidden" name="postId" value={post.id} />
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-primary ml-1">Full Name <span className="text-secondary">*</span></label>
+                                <label className="text-sm font-bold text-primary !ml-1 block">Full Name <span className="text-secondary">*</span></label>
                                 <input
                                     type="text"
                                     name="name"
@@ -265,7 +264,7 @@ const BlogContent = ({ post }: BlogContentProps) => {
                                 />
                             </div>
                             <div className="space-y-2">
-                                <label className="text-sm font-bold text-primary ml-1">Email Address <span className="text-secondary">*</span></label>
+                                <label className="text-sm font-bold text-primary ml-1 block">Email Address <span className="text-secondary">*</span></label>
                                 <input
                                     type="email"
                                     name="email"
@@ -276,7 +275,7 @@ const BlogContent = ({ post }: BlogContentProps) => {
                             </div>
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-bold text-primary ml-1">Your Comment</label>
+                            <label className="block text-sm font-bold text-primary ml-1">Your Comment</label>
                             <textarea
                                 name="content"
                                 placeholder="Tell us more about your thought"
@@ -314,7 +313,7 @@ const BlogContent = ({ post }: BlogContentProps) => {
                             {post.Comment.filter((c) => c.approved === true).length} Comments
                         </h4>
 
-                        <div className="space-y-8">
+                        <div className="md:space-y-8 space-y-6">
                             {[...post.Comment]
                                 .filter((c) => c.approved === true)
                                 .reverse()
@@ -335,7 +334,7 @@ const BlogContent = ({ post }: BlogContentProps) => {
                                 ))}
 
                             {visibleComments < post.Comment.filter((c) => c.approved === true).length && (
-                                <div className="text-center pt-8">
+                                <div className="text-center md:pt-8 pt-6">
                                     <button
                                         onClick={loadMoreComments}
                                         className="px-8 py-3 rounded-xl border border-gray-200 text-primary font-bold hover:bg-gray-50 hover:border-secondary hover:text-secondary transition-all shadow-sm"

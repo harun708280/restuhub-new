@@ -36,8 +36,8 @@ const RelatedBlog: React.FC<RelatedBlogProps> = ({
 
     return (
         <section className="">
-            <div className="flex items-center justify-between mb-10">
-                <h2 className="text-3xl font-bold text-primary">Related Blogs</h2>
+            <div className="flex items-center justify-between mb-6 md:mb-10">
+                <h2 className="md:text-3xl text-xl font-bold text-primary">Related Blogs</h2>
                 {!showAll && relatedItems.length > 3 && (
                     <button
                         onClick={() => setShowAll(true)}

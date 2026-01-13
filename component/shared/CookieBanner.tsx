@@ -1,4 +1,4 @@
-// component/shared/CookieBanner.tsx
+
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -11,7 +11,7 @@ export default function CookieBanner() {
   useEffect(() => {
     const consented = localStorage.getItem("cookie-consent");
     if (!consented) {
-      setTimeout(() => setIsVisible(true), 1000); // slight delay for premium feel
+      setTimeout(() => setIsVisible(true), 1000);
     }
   }, []);
 
@@ -31,10 +31,9 @@ export default function CookieBanner() {
       className="fixed bottom-4 max-w-[520px] left-4 right-4 md:left-8 md:right-8 z-[9999]"
     >
       <div className="relative overflow-hidden rounded-2xl bg-white/90 backdrop-blur-2xl border border-white/30 shadow-2xl">
-        {/* Subtle gradient overlay */}
+
         <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 via-transparent to-secondary/10" />
-        
-        {/* Shine sweep effect */}
+
         <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-1000">
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 translate-x-[-200%] animate-[shimmer_2s_infinite]" />
         </div>
@@ -45,7 +44,7 @@ export default function CookieBanner() {
               We value your privacy
             </h3>
             <p className="text-sm md:text-base text-[#5a6370] mt-2 leading-relaxed">
-              We use cookies to improve your experience and track basic analytics. 
+              We use cookies to improve your experience and track basic analytics.
               By continuing, you agree to our{" "}
               <Link href="/privacy" className="text-secondary underline underline-offset-4 hover:text-secondary/80 transition">
                 Privacy Policy
@@ -60,7 +59,7 @@ export default function CookieBanner() {
             >
               Accept All
             </button>
-            
+
             <Link href="/privacy">
               <button className="secondary-btn whitespace-nowrap text-sm md:text-base bg-transparent border border-[#00000033] hover:border-[#00000066] hover:bg-black/5">
                 Privacy Policy

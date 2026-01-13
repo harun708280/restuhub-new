@@ -51,7 +51,7 @@ const ManageReviews = () => {
               Instantly Reply to Reviews and Build a Stronger Reputation
             </h2>
             <p className="desc">
-             Everything you need to manage reviews faster, smarter, and with zero extra staff. Let AI do the hard work. You just approve and grow.
+              Everything you need to manage reviews faster, smarter, and with zero extra staff. Let AI do the hard work. You just approve and grow.
 
             </p>
           </div>
@@ -81,7 +81,7 @@ const ManageReviews = () => {
                   />
                 </div>
 
-                <h3 className="font-bold text-2xl mb-4">{item.title}</h3>
+                <h3 className="font-bold text-xl md:text-2xl mb-4">{item.title}</h3>
                 <p className="text-gray-700 font-medium">{item.des}</p>
               </div>
             </FadeInWhenVisible>

@@ -16,14 +16,14 @@ const CoolFeature = () => {
             viewport={{ once: true, amount: 0.4 }}
             className="max-w-[900px] text-center mx-auto"
           >
-            <h2 className="title text-white">Discover What Makes RestruhubStand Out</h2>
+            <h2 className="title text-white">Discover What Makes Restruhub Stand Out</h2>
             <p className="desc text-white! pt-2 lg:pt-4">
               Restruhubgives you the tools to reply to reviews quickly, stay organized, and build customer trust. It’s simple to use and helps you manage everything without needing extra staff or time.
             </p>
           </motion.div>
 
           <div className="pt-60">
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 lg:gap-8">
               {[0, 1].map((index) => (
                 <motion.div
@@ -71,7 +71,7 @@ const CoolFeature = () => {
               ))}
             </div>
 
-           
+
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ const CoolFeature = () => {
                     <motion.button
                       whileHover={{ scale: 1.05, y: -4 }}
                       whileTap={{ scale: 0.98 }}
-                       viewport={{  once : true, }}
+                      viewport={{ once: true, }}
                       className="primary-btn w-full md:w-fit"
                     >
                       <span>Get Started</span>
@@ -101,7 +101,7 @@ const CoolFeature = () => {
                     <motion.button
                       whileHover={{ scale: 1.05, backgroundColor: "#e5e5e5" }}
                       whileTap={{ scale: 0.98 }}
-                       viewport={{  once : true, }}
+                      viewport={{ once: true, }}
                       className="bg-white border px-4 py-2.5 rounded-xl w-full md:w-fit border-[#00000033] hover:bg-[#f0f0f0] hover:border-[#000000] transition-all duration-300"
                     >
                       <span>Request A Demo</span>
@@ -113,7 +113,7 @@ const CoolFeature = () => {
                   initial={{ opacity: 0, scale: 0.92 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 1.1, delay: 0.7 }}
-                  viewport={{  once : true, }}
+                  viewport={{ once: true, }}
                   className="overflow-hidden h-[200px] md:h-[301px] max-w-[588px] w-full relative rounded-xl"
                 >
                   <Image

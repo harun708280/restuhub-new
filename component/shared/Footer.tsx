@@ -15,7 +15,7 @@ const Footer = () => {
 
   const scrollToSection = (sectionId: string) => {
     if (pathname !== "/") {
-      // Navigate to home with query param
+
       router.push(`/?scrollTo=${sectionId}`);
     } else {
       const element = document.getElementById(sectionId);
@@ -31,7 +31,7 @@ const Footer = () => {
     <footer className="bg-[#111827] pt-100">
       <div className="container mx-auto">
         <div className="flex flex-wrap justify-between gap-6">
-          {/* Logo + Description */}
+
           <div className="w-[90%] md:w-[40%]">
             <div onClick={scrollToTop} className="relative h-[50px] w-[190px] cursor-pointer">
               <Image src="/Images/logo.png" alt="Logo" fill priority />
@@ -41,7 +41,7 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Company Section */}
+
           <div className="text-white">
             <h6 className="text-lg md:text-xl font-semibold">Company</h6>
             <div className="flex flex-col gap-2 pt-5 text-[16px] opacity-80">
@@ -57,7 +57,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Resources */}
+
           <div className="text-white">
             <h6 className="text-lg md:text-xl font-semibold">Resources</h6>
             <div className="flex flex-col gap-2 pt-5 text-[16px] opacity-80">
@@ -66,7 +66,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Policies */}
+
           <div className="text-white">
             <h6 className="text-lg md:text-xl font-semibold">Policies</h6>
             <div className="flex flex-col gap-2 pt-5 text-[16px] opacity-80">
@@ -76,7 +76,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+
         <div className="mt-12 border-t border-white/10 flex flex-wrap justify-between items-center text-white py-8">
           <span>© 2025, All Rights Reserved</span>
 
