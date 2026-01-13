@@ -15,10 +15,10 @@ const Hero = () => {
         <div className="flex flex-col justify-center items-center">
           <FadeInWhenVisible delay={0}>
             <div className="flex md:gap-3 gap-2 justify-center items-center bg-secondary/20 rounded-full w-fit py-2.5 px-4 pr-5">
-              <div className=" relative h-5 w-5 md:h-6 md:w-6">
+              <div className=" relative h-4 w-4 md:h-6 md:w-6">
                 <Image src={"/icon/star.svg"} alt=" star" fill priority />
               </div>
-              <span className="text-[12px] md:text-[16px] font-medium text-secondary">
+              <span className="text-[10px] md:text-[16px] font-medium text-secondary">
                 No more missed replies. No more generic answer
               </span>
             </div>
@@ -26,8 +26,8 @@ const Hero = () => {
 
           <FadeInWhenVisible delay={0.2}>
             <div className="text-center max-w-[787px] mx-auto ">
-              <h1 className=" font-bold text-[27px] sm:text-[35px] md:text-[45px] lg:text-[60px] leading-tight lg:leading-[70px] pt-5 lg:pt-8 ">
-                Let AI Handle Your Reviews.
+              <h1 className=" font-bold text-[25px] sm:text-[35px] md:text-[45px] lg:text-[60px] leading-tight lg:leading-[70px] pt-5 lg:pt-8 ">
+                Let AI Handle Your Reviews. <br />
 
                 <span className="text-secondary"> You Stay Focused on Food</span>
               </h1>

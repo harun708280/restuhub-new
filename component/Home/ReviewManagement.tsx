@@ -11,7 +11,7 @@ const ReviewManagement = () => {
       <div className="container">
         <FadeInWhenVisible>
           <div
-            className=" max-h-[490px] bg-cover bg-no-repeat bg-top rounded-3xl -mx-4 md:mx-0 overflow-hidden"
+            className=" max-h-[490px] bg-cover bg-no-repeat bg-top rounded-xl md:rounded-3xl -mx-4 md:mx-0 overflow-hidden"
             style={{
               backgroundImage: "url('/Images/ReviewManagement-bg.png')",
             }}
